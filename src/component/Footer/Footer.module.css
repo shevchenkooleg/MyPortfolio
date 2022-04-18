@@ -1,0 +1,20 @@
+.footerBlock {
+    height: 120px;
+    background-color: lightsteelblue;
+}
+
+.container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.social {
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.copyright {
+    font-size: 10px;
+}

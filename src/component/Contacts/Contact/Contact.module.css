@@ -1,0 +1,19 @@
+.contactContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /*justify-content: space-between;*/
+    background-color: #dcbbff;
+    margin-top: 10px;
+}
+
+.contact {
+    background-color: antiquewhite;
+    padding-left: 30px;
+
+}
+
+.logo {
+    background-color: lightsteelblue;
+}

@@ -1,0 +1,26 @@
+.projectBlock {
+    width: 300px;
+    border: 1px solid;
+    background-color: #eaedef;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+.preview {
+    height: 200px;
+    width: 100%;
+    background-color: #61dafb;
+    align-items: center;
+}
+
+.description {
+
+}
+
+.link {
+
+}
+
