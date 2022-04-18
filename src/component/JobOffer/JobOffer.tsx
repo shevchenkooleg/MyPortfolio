@@ -7,7 +7,7 @@ const JobOffer = () => {
     return (
         <div className={s.jobOfferBlock}>
             <div className={`${styleContainer.container} ${s.container}`}>
-                <h2>Hire Me</h2>
+                <h2 className={s.title}>Hire Me</h2>
                 <span>'Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'</span>
                 <div className={s.contacts}>
                     <div>+22 12345 678 9012</div>

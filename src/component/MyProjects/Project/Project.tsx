@@ -7,7 +7,10 @@ type ProjectPropsType = ProjectType
 const Project = ({title, preview, description, link}: ProjectPropsType) => {
     return (
         <div className={s.projectBlock}>
-            <div className={s.preview}>{preview}</div>
+            <div className={s.preview}>
+                <img src="" alt=""/>
+                <a className={s.btn} href="#0">Look</a>
+            </div>
             <h3>{title}</h3>
             <span className={s.description}>{description}</span>
         </div>

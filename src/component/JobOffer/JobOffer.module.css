@@ -1,12 +1,15 @@
 .jobOfferBlock {
     height: 40vh;
-    border: 1px solid;
     background-color: antiquewhite;
 }
 
 .container {
     flex-direction: column;
     text-align: center;
+}
+
+.title {
+    background-color: #eaedef;
 }
 
 .contacts {
@@ -21,7 +24,6 @@
 @media (max-width: 600px) {
     .jobOfferBlock {
         height: 70vh;
-        border: 1px solid;
         background-color: antiquewhite;
     }
 }

@@ -15,7 +15,7 @@ const ContactMe = (props:ContactMePropsType) => {
     return (
         <div className={s.contactMeBlock}>
             <div className={`${styleContainer.container} ${s.container}`}>
-                <h2>Contact Me</h2>
+                <h2 className={s.title}>Contact Me</h2>
                 <div className={s.contacts}>
                     <div className={s.contactInfo}>
                         {props.contacts.map(el=>{
