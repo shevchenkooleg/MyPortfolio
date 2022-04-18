@@ -9,7 +9,8 @@
 }
 
 .title {
-    width: 100%;
+    text-align: center;
+    background-color: #eaedef;
 }
 
 .contacts {
@@ -58,6 +59,9 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+.formTitle {
+    width: 100%;
 }
 
 .message {

@@ -31,7 +31,7 @@ const ContactMe = (props:ContactMePropsType) => {
                         </div>
 
                         <div className={s.formContainer}>
-                            <form action=""><MyUniversalInput className={s.title} value={'Enter the discussion title'} callback={()=>{}}/></form>
+                            <form action=""><MyUniversalInput className={s.formTitle} value={'Enter the discussion title'} callback={()=>{}}/></form>
                             <form action=""><MyUniversalInput className={s.message} value={'Write your message'} callback={()=>{}}/></form>
                         </div>
                         <div className={s.btnContainer}>
