@@ -1,5 +1,5 @@
 .jobOfferBlock {
-    height: 40vh;
+    min-height: 40vh;
     background-color: antiquewhite;
 }
 
