@@ -1,22 +1,54 @@
+import {motion} from 'framer-motion';
 import React from 'react';
-import s from './Intro.module.css'
-import styleContainer from '../../common/styles/Container.module.css'
+import mainPic from '../../common/assets/images/main-page-3.png'
+
+
+const textAnimation = {
+    hidden: {
+        y: 50,
+        opacity: 0,
+    },
+    visible: {
+        y: 0,
+        opacity: 1
+    },
+}
+
+const imageAnimation = {
+    hidden: (custom:number) =>({
+        x:50*custom,
+        opacity: 0,
+    }),
+    visible: {
+        x:0,
+        opacity: 1
+    }
+}
+
 
 const Intro = () => {
-    return (
-        <div className={s.intro}>
-            <div className={styleContainer.container}>
-                <div className={s.greeting}>
-                    <span>Hi there</span>
-                    <h1>I am Oleg Shevchenko</h1>
-                    <p>A Frontend Developer</p>
-                </div>
-                <div className={s.photo}>
 
+
+    return (
+
+        <motion.section initial='hidden' whileInView='visible' viewport={{once: true}}
+                        className='h-[90%] bg-background-gray flex justify-center'>
+
+            <div className='flex w-[90%] h-full justify-around items-center border-b-[1px] border-black'>
+                <div className='text-[55px] font-light'>
+                    <motion.p variants={textAnimation} transition={{duration:1.5}}>HI!</motion.p>
+                    <motion.h1 variants={textAnimation} transition={{duration:1.5}}>I AM OLEG SHEVCHENKO</motion.h1>
+                    <motion.p variants={textAnimation} transition={{duration:1.5}}>A FRONT-END DEVELOPER</motion.p>
+                </div>
+                <div className='w-[58%] relative'>
+                    <motion.img className='relative z-10' src={mainPic} alt="avatar"
+                                variants={imageAnimation} transition={{duration:1.5}} custom={1}/>
+                    <motion.div className='w-[500px] h-[500px] bg-main-circle rounded-full absolute left-[3%] top-[10%] z-[0]'
+                                variants={imageAnimation} transition={{duration:1.5}} custom={-1}>
+                    </motion.div>
                 </div>
             </div>
-
-        </div>
+        </motion.section>
     );
 };
 

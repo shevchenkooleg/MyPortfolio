@@ -1,17 +1,16 @@
 import React from 'react';
 import {ContactType} from "../../../App";
-import s from './Contact.module.css'
 
 type ContactPropsType = ContactType
 
 
 const Contact = ({title, logo, value}: ContactPropsType) => {
     return (
-        <div className={s.contactContainer}>
-            <div className={s.logo}>{logo}</div>
-            <div className={s.contact}>
-                <div>{title}</div>
-                <div>{value}</div>
+        <div className='flex'>
+            <div className='flex w-[30px] items-center'>{logo}</div>
+            <div className='flex flex-col pl-[20px]'>
+                <div className='text-[20px]'>{title}</div>
+                <div className='text-[20px]'>{value}</div>
             </div>
         </div>
     );

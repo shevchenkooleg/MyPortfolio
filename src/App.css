@@ -1,3 +1,53 @@
+/*!* Tailwind init files *!*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../src/common/assets/fonts/Oswald-Regular.eot');
+    src: url('../src/common/assets/fonts/Oswald-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../src/common/assets/fonts/Oswald-Regular.woff2') format('woff2'),
+    url('../src/common/assets/fonts/Oswald-Regular.woff') format('woff'),
+    url('../src/common/assets/fonts/Oswald-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../src/common/assets/fonts/Oswald-Light.eot');
+    src: url('../src/common/assets/fonts/Oswald-Light.eot?#iefix') format('embedded-opentype'),
+    url('../src/common/assets/fonts/Oswald-Light.woff2') format('woff2'),
+    url('../src/common/assets/fonts/Oswald-Light.woff') format('woff'),
+    url('../src/common/assets/fonts/Oswald-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../src/common/assets/fonts/Roboto-Regular.eot');
+    src: local('Roboto'), local('Roboto-Regular'),
+    url('../src/common/assets/fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../src/common/assets/fonts/Roboto-Regular.woff') format('woff'),
+    url('../src/common/assets/fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Oswald, sans-serif;
+    @apply
+    text-black
+}
+
+
 .App {
+
 }
 
