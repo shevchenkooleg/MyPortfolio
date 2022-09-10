@@ -3,6 +3,9 @@ import s from './ContactMe.module.css'
 import {ContactType} from "../../App";
 import { useFormik } from 'formik';
 import ContactMap from "./ContactMap";
+import axios from 'axios';
+import {apiConfig} from "../../config/config";
+
 
 type ContactMePropsType = {
     contacts: Array<ContactType>
@@ -22,8 +25,37 @@ const ContactMe = (props:ContactMePropsType) => {
         },
         // validationSchema: LoginValidationSchema,
         onSubmit: (values, actions) => {
+
+            console.log(apiConfig.SERVICE_ID)
+
+            const data = {
+                service_id: apiConfig.SERVICE_ID as string,
+                template_id: apiConfig.TEMPLATE_ID as string,
+                user_id: apiConfig.USER_ID as string,
+                template_params: {
+                    'name': JSON.stringify(values.name),
+                    'email': JSON.stringify(values.email),
+                    'phone': JSON.stringify(values.phone),
+                    'subject': JSON.stringify(values.subject),
+                    'comments': JSON.stringify(values.comments),
+
+                    // 'g-recaptcha-response': '03AHJ_ASjnLA214KSNKFJAK12sfKASfehbmfd...'
+                }
+            };
+
+            console.log(data)
             // dispatch(loginTC({email: values.login, password: values.password, rememberMe: values.rememberMe}))
             console.log('yoyoyo')
+            axios({
+                method: 'post',
+                url: 'https://api.emailjs.com/api/v1.0/email/send',
+                data,
+            }).then(res=>{
+                console.log(res)
+            }).catch(err=>{
+                console.log(err)
+            });
+
             actions.resetForm({values:{name:'', email:'',phone:'',subject:'',comments:''}})
 
         }
@@ -81,7 +113,7 @@ const ContactMe = (props:ContactMePropsType) => {
                                     />
                                 </div>
                                 <div className='flex mb-[10px]'>
-                                    <textarea className="textarea text-white rounded-[30px] px-[30px] w-full h-[150px] bg-white text-black "
+                                    <textarea className="textarea rounded-[30px] px-[30px] w-full h-[150px] bg-white text-black"
                                               id="comments"
                                               placeholder="WRITE COMMENTS"
                                               onChange={formik.handleChange}

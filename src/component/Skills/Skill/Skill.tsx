@@ -20,7 +20,6 @@ const imageAnimation = {
 }
 
 const Skill = ({title, icon, description}: SkillPropsType) => {
-    console.log(icon)
 
     const [over, setOver] = useState(false)
 
