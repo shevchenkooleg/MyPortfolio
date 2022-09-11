@@ -5,11 +5,14 @@ import { useFormik } from 'formik';
 import ContactMap from "./ContactMap";
 import axios from 'axios';
 import {apiConfig} from "../../config/config";
+import ReCAPTCHA from "react-google-recaptcha";
+
 
 
 type ContactMePropsType = {
     contacts: Array<ContactType>
 }
+
 
 
 const ContactMe = (props:ContactMePropsType) => {
@@ -68,6 +71,10 @@ const ContactMe = (props:ContactMePropsType) => {
     // }
 
 
+    const onCaptchaTestPass = (value: any) => {
+        console.log(value)
+    }
+
     return (
         <div className='h-full bg-background-gray flex justify-center'>
             <div className='flex flex-col w-[90%] h-[100%] items-start border-b-[1px] border-black'>
@@ -120,6 +127,9 @@ const ContactMe = (props:ContactMePropsType) => {
                                               value={formik.values.comments}
                                     ></textarea>
                                 </div>
+                                <ReCAPTCHA sitekey={apiConfig.CAPTCHA_SITE_KEY as string}
+                                           onChange={onCaptchaTestPass}
+                                className='my-[20px]'/>
                                 <button className="btn mb-[60px] rounded-full w-[40%] hover:bg-white hover:text-black hover:border-white" type='submit'>Submit</button>
                             </form>
                         </div>

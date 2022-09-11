@@ -86,7 +86,7 @@ const skills: Array<SkillType> = [
     {title: 'CSS3', icon: <CSSIcon/>, description: skillDescription.CSS3},
     {title: 'SCSS/SASS', icon: <SCSSIcon/>, description: skillDescription.SASS},
     {title: 'RRD', icon: <RouterIcon/>, description: skillDescription.RRD},
-    {title: 'Postman', icon: <PostmanIcon/>, description: skillDescription.Postman},
+    // {title: 'Postman', icon: <PostmanIcon/>, description: skillDescription.Postman},
     {title: 'Formik', icon: <FormikIcon/>, description: skillDescription.Formik},
     {title: 'Docker', icon: <DockerIcon/>, description: skillDescription.Docker},
     {title: 'TailwindCSS', icon: <TailWIndCSS/>, description: skillDescription.TailwindCSS},
