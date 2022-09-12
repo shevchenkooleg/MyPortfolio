@@ -67,7 +67,7 @@ const skillDescription = {
 }
 
 export const skills: Array<SkillType> = [
-    {title: 'JS', icon: <JSIcon/>, description: 'skillDescription.JS'},
+    {title: 'JS', icon: <JSIcon/>, description: skillDescription.JS},
     {title: 'React', icon: <ReactIcon/>, description: skillDescription.React},
     {title: 'Next.js', icon: <NextJSIcon/>, description: skillDescription.NextJS},
     {title: 'Redux', icon: <ReduxIcon/>, description: skillDescription.Redux},

@@ -33,7 +33,7 @@ const Skill = ({title, icon, description}: SkillPropsType) => {
     return (
         <motion.div initial='hidden' whileInView='visible' viewport={{amount:0.2, once: true}}
                     variants={imageAnimation} transition={{duration:1.5}}
-                    className=' relative flex flex-col w-[250px] items-center justify-start h-[450px] bg-background-white rounded-2xl mb-[50px] mr-[20px]'>
+                    className=' relative flex flex-col w-[270px] items-center justify-start h-[450px] bg-background-white rounded-2xl mb-[50px] mr-[20px]'>
             <div className='w-[90px] h-[90px] mt-[20px]'>{icon}</div>
             <h3 className='text-[24px] mt-[10px] mb-[20px]'>{title}</h3>
             <span className='text-[15px] mb-[15px] font-light px-[20px] font-description text-center'>{description}</span>

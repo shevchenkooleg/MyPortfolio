@@ -43,7 +43,7 @@ const Intro = () => {
                 <div className='w-[58%] relative'>
                     <motion.img className='relative z-10' src={mainPic} alt="avatar"
                                 variants={imageAnimation} transition={{duration:1.5}} custom={1}/>
-                    <motion.div className='w-[500px] h-[500px] bg-main-circle rounded-full absolute left-[3%] top-[10%] z-[0]'
+                    <motion.div className='w-[67%] h-[67%] bg-main-circle rounded-full absolute left-[3%] top-[10%] z-[0]'
                                 variants={imageAnimation} transition={{duration:1.5}} custom={-1}>
                     </motion.div>
                 </div>

@@ -3,7 +3,7 @@ import React from 'react';
 import Navigation from "./Navigation/Navigation";
 
 type HeaderPropsType = {
-    scrollCallback: () => void
+    scrollCallback: (id:string) => void
     scrollPosition: number
 }
 

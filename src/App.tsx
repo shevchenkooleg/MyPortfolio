@@ -9,39 +9,48 @@ import ContactMe from "./component/Contacts/ContactMe";
 import Footer from "./component/Footer/Footer";
 import {BrowserRouter} from 'react-router-dom';
 import {catchWays, contacts, projects, skills} from './common/assets/data/dataSet';
+import { useBeforeunload } from 'react-beforeunload';
 
+
+export enum blockId {
+    intro = 'intro',
+    skills = 'skills',
+    myProjects = 'projects',
+    catchME = 'catchMe',
+}
 
 function App() {
 
+
     const [scroll, setScroll] = React.useState(0);
-    console.log(scroll)
     const handleScroll = () => {
         setScroll(window.scrollY);
     };
 
-    const handleUpButton = () => {
-        window.scrollTo(0, 0);
-    };
+    useBeforeunload(() => {
+        window.scrollTo(0,0)
+    });
 
-    const scrollHeaderHandler = () => {
-        window.scrollTo({
-            left: 0,
-            top: 0,
-            behavior: "smooth",
-        });
-    }
-
-    const scrollSkillsHandler = () => {
-        const skillsBlock = document.getElementById('projects')
-        const skillsBlockTopCoordPosition = skillsBlock && skillsBlock.getBoundingClientRect().top + window.pageYOffset
-        skillsBlockTopCoordPosition && window.scrollTo({
-            left: 0,
-            top: skillsBlockTopCoordPosition,
-            behavior: "smooth",
-        })
+    const universalScrollHandler = (id: string) => {
+        if (id === blockId.intro) {
+            window.scrollTo({
+                left: 0,
+                top: 0,
+                behavior: "smooth",
+            });
+        } else {
+            const targetBlock = document.getElementById(id)
+            const targetBlockTopCoordPosition = targetBlock && targetBlock.getBoundingClientRect().top + window.pageYOffset
+            targetBlockTopCoordPosition && window.scrollTo({
+                left: 0,
+                top: targetBlockTopCoordPosition,
+                behavior: "smooth",
+            })
+        }
     }
 
     React.useEffect(() => {
+        // window.scrollTo(0,0);
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
@@ -50,17 +59,17 @@ function App() {
     return (
         <BrowserRouter>
             <div className="App">
-                <div className='h-screen'>
-                    <Header scrollPosition={scroll} scrollCallback={scrollSkillsHandler}/>
+                <div id={blockId.intro} className='h-screen'>
+                    <Header scrollPosition={scroll} scrollCallback={universalScrollHandler}/>
                     <Intro/>
                 </div>
-                <div id='skills' className='min-h-[80vh]'>
+                <div id={blockId.skills} className='min-h-[80vh]'>
                     <Skills skills={skills}/>
                 </div>
-                <div id='projects' className='min-h-[50vh]'>
+                <div id={blockId.myProjects} className='min-h-[50vh]'>
                     <MyProjects projects={projects}/>
                 </div>
-                <div id='catchMe' className='min-h-[30vh]'>
+                <div id={blockId.catchME} className='min-h-[30vh]'>
                     <CatchMeHere catchWays={catchWays}/>
                 </div>
                 <div className='min-h-[80%]'>

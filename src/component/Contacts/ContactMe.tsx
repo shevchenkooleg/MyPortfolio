@@ -77,13 +77,22 @@ const ContactMe = (props:ContactMePropsType) => {
         setReCaptchaTest(true)
     }
 
+    const mapWidthDeterminate = () => {
+        console.log(document.documentElement.clientWidth)
+        if (document.documentElement.clientWidth < 500){
+            return [350,300]
+        } else {
+            return [550,450]
+        }
+    }
+
     return (
         <div className='h-full bg-background-gray flex justify-center'>
             <div className='flex flex-col w-[90%] h-[100%] items-start border-b-[1px] border-black'>
                 <h2 className='text-[30px] pt-[100px] pb-[100px]'>CONTACT ME</h2>
                 <div className='flex w-full flex-wrap justify-between'>
                     <div className='flex flex-col'>
-                        <ContactMap/>
+                        <ContactMap width={mapWidthDeterminate()[0]} height={mapWidthDeterminate()[1]}/>
                     </div>
                     <div className='flex flex-wrap flex-col justify-center'>
                         <div className='w-full'>
