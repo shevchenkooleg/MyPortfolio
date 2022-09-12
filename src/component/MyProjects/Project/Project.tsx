@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import React, {useState} from 'react';
-import {ProjectType} from "../../../App";
+import { ProjectType } from '../../../common/assets/data/dataSet';
 
 type ProjectPropsType = ProjectType
 

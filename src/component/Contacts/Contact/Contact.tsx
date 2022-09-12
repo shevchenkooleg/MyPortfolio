@@ -1,5 +1,5 @@
 import React from 'react';
-import {ContactType} from "../../../App";
+import { ContactType } from '../../../common/assets/data/dataSet';
 
 type ContactPropsType = ContactType
 

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './ContactMe.module.css'
-import {ContactType} from "../../App";
 import { useFormik } from 'formik';
 import ContactMap from "./ContactMap";
 import axios from 'axios';
 import {apiConfig} from "../../config/config";
-import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA  from "react-google-recaptcha";
+import { ContactType } from '../../common/assets/data/dataSet';
 
 
 
@@ -17,6 +17,7 @@ type ContactMePropsType = {
 
 const ContactMe = (props:ContactMePropsType) => {
 
+    const [reCaptchaTest, setReCaptchaTest] = useState(false)
 
     const formik = useFormik({
         initialValues: {
@@ -73,6 +74,7 @@ const ContactMe = (props:ContactMePropsType) => {
 
     const onCaptchaTestPass = (value: any) => {
         console.log(value)
+        setReCaptchaTest(true)
     }
 
     return (
@@ -130,7 +132,7 @@ const ContactMe = (props:ContactMePropsType) => {
                                 <ReCAPTCHA sitekey={apiConfig.CAPTCHA_SITE_KEY as string}
                                            onChange={onCaptchaTestPass}
                                 className='my-[20px]'/>
-                                <button className="btn mb-[60px] rounded-full w-[40%] hover:bg-white hover:text-black hover:border-white" type='submit'>Submit</button>
+                                <button className="btn mb-[60px] rounded-full w-[40%] hover:bg-white hover:text-black hover:border-white" disabled={!reCaptchaTest} type='submit'>Submit</button>
                             </form>
                         </div>
 

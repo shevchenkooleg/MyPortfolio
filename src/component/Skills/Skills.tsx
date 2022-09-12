@@ -1,7 +1,7 @@
 import React from 'react';
 import Skill from "./Skill/Skill";
-import {SkillType} from "../../App";
 import { motion } from 'framer-motion';
+import { SkillType } from '../../common/assets/data/dataSet';
 
 type SkillsPropsType = {
     skills: Array<SkillType>

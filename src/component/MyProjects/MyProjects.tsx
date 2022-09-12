@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import React from 'react';
-import {ProjectType} from "../../App";
+import { ProjectType } from '../../common/assets/data/dataSet';
 import Project from "./Project/Project";
 
 

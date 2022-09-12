@@ -1,8 +1,8 @@
 import React from 'react';
 import {MyUniversalButton} from "../../common/universalComponent/MyUniversalButton";
-import {ContactType} from "../../App";
 import { MContactCard } from "./ContactCard";
 import { motion } from 'framer-motion';
+import { ContactType } from '../../common/assets/data/dataSet';
 
 type CatchMeHerePropsType = {
     catchWays: Array<ContactType>
