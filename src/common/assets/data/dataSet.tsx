@@ -19,8 +19,9 @@ import PostmanIcon from "../icons/PostmanIcon";
 export type ProjectType = {
     title: string
     preview: any
-    description: string
-    link: string
+    description: { description: string, technologies: string[] }
+    codeLink: string
+    pageLink: string
 }
 export type SkillType = {
     title: string
@@ -32,7 +33,22 @@ export type ContactType = {
     logo: string
     value: string
 }
-const description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+const projectDescription = {
+    'socialNetwork': {
+        description: "React SPA that implemented an unidirectional data flow (FLUX - architecture), fundamental " +
+            "programming patterns such as modules, a subscriber-listener and built both on the legacy class and modern functional components",
+        technologies: ['redux', 'typescript', 'axios', 'formik', 'react-router', 'thunk'],
+    },
+    'todoList': {
+        description: "React SPA witch built using a modern approach to working with application states - the Redux-Toolkit" +
+            " library, as well as implementing the ability to automatically test program code using the jest library",
+        technologies: ['redux-toolkit', 'typescript', 'axios', 'jest', 'thunk', 'ant-design'],
+    },
+    'memoCards': {
+        description: "React SPA for educational assistance that implemented TypeScript - static-typed language and using RestAPI, FLUX, Thunk technologies",
+        technologies: ['redux','typescript', 'axios', 'formik', 'react-router', 'redux-thunk', 'material-ui'],
+    },
+}
 
 const todoImage = todoImg
 const cardImage = cardImg
@@ -84,9 +100,10 @@ export const skills: Array<SkillType> = [
 
 
 export const projects: Array<ProjectType> = [
-    {title: 'SOCIAL NETWORK', preview: socialNetworkImage, description: description, link: ''},
-    {title: 'TODO LIST', preview: todoImage, description: description, link: ''},
-    {title: 'MEMO CARDS', preview: cardImage, description: description, link: ''},
+    {title: 'SOCIAL NETWORK', preview: socialNetworkImage, description: projectDescription.socialNetwork, codeLink: 'https://github.com/shevchenkooleg/way_of_the_samurai_form_js_to_ts.git', pageLink: ''},
+    {title: 'TODO LIST', preview: todoImage, description: projectDescription.todoList, codeLink: 'https://github.com/shevchenkooleg/todo-toolkit.git', pageLink: ''},
+    {title: 'MEMO CARDS', preview: cardImage, description: projectDescription.memoCards
+        , codeLink: 'https://github.com/shevchenkooleg/friday-cards.git', pageLink: ''},
 ]
 export const catchWays: Array<ContactType> = [
     {

@@ -16,7 +16,7 @@ const Footer = () => {
                     <a href="#0"><img src={facebookLogo} alt="facebook" width={'30px'} height={'30px'}/></a>
                     <a href="#0"><img src={linkedInLogo} alt="linkedIn" width={'30px'} height={'30px'}/></a>
                 </div>
-                <span className='text-[10px] mb-[10px]'><img src={copyright} alt="copyright" width={'12px'} height={'12px'}/> 2022. ALL RIGHT RESERVED.</span>
+                <span className='text-[10px] mb-[10px] flex justify-between'><img className='mr-[5px]' src={copyright} alt="copyright" width={'12px'} height={'12px'}/> 2022. ALL RIGHT RESERVED.</span>
             </div>
 
 

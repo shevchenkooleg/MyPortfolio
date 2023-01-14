@@ -9,7 +9,8 @@ module.exports = {
         "background-gray-gradient": "#cbc4bc",
         "background-gray-light": "#efe8db",
         "background-white": '#FFF',
-        "main-circle": '#f5b731'
+        "main-circle": '#f5b731',
+        'secondary-text-color': '#706d6d',
       },
       fontFamily: {
         'sans': ['Oswald', 'sans-serif'],

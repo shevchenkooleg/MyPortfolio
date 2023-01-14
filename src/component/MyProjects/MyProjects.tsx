@@ -35,7 +35,9 @@ const MyProjects = (props: MyProjectsPropsType) => {
                             title={el.title}
                             preview={el.preview}
                             description={el.description}
-                            link={el.link}/>
+                            codeLink={el.codeLink}
+                            pageLink={el.pageLink}
+                        />
                     })}
                 </div>
             </div>

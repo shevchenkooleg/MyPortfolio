@@ -52,6 +52,7 @@ function App() {
     React.useEffect(() => {
         // window.scrollTo(0,0);
         window.addEventListener("scroll", handleScroll);
+        // window.scrollTo(0,0);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
