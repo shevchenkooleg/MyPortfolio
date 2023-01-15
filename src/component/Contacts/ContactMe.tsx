@@ -141,7 +141,7 @@ const ContactMe = (props: ContactMePropsType) => {
                                            onChange={onCaptchaTestPass}
                                            className='my-[20px]'/>
                                 <button
-                                    className={`btn mb-[60px] rounded-full ${reCaptchaTest ? `w-[40%]` : `w-[0%] opacity-0` } hover:bg-white hover:text-black hover:border-white transition duration-300`}
+                                    className={`btn mb-[60px] rounded-full ${reCaptchaTest ? `w-[40%]` : `w-[0%] opacity-0` } hover:bg-white hover:text-black hover:border-white transition duration-700`}
                                     disabled={!reCaptchaTest} type='submit'>Submit
                                 </button>
                             </form>
