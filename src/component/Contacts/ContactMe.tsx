@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
 import s from './ContactMe.module.css'
-import { useFormik } from 'formik';
+import {useFormik} from 'formik';
 import ContactMap from "./ContactMap";
 import axios from 'axios';
 import {apiConfig} from "../../config/config";
-import ReCAPTCHA  from "react-google-recaptcha";
-import { ContactType } from '../../common/assets/data/dataSet';
-
+import ReCAPTCHA from "react-google-recaptcha";
+import {ContactType} from '../../common/assets/data/dataSet';
 
 
 type ContactMePropsType = {
@@ -14,8 +13,7 @@ type ContactMePropsType = {
 }
 
 
-
-const ContactMe = (props:ContactMePropsType) => {
+const ContactMe = (props: ContactMePropsType) => {
 
     const [reCaptchaTest, setReCaptchaTest] = useState(false)
 
@@ -54,13 +52,13 @@ const ContactMe = (props:ContactMePropsType) => {
                 method: 'post',
                 url: 'https://api.emailjs.com/api/v1.0/email/send',
                 data,
-            }).then(res=>{
+            }).then(res => {
                 console.log(res)
-            }).catch(err=>{
+            }).catch(err => {
                 console.log(err)
             });
 
-            actions.resetForm({values:{name:'', email:'',phone:'',subject:'',comments:''}})
+            actions.resetForm({values: {name: '', email: '', phone: '', subject: '', comments: ''}})
 
         }
     })
@@ -79,10 +77,10 @@ const ContactMe = (props:ContactMePropsType) => {
 
     const mapWidthDeterminate = () => {
         console.log(document.documentElement.clientWidth)
-        if (document.documentElement.clientWidth < 500){
-            return [350,300]
+        if (document.documentElement.clientWidth < 500) {
+            return [350, 300]
         } else {
-            return [550,450]
+            return [550, 450]
         }
     }
 
@@ -131,17 +129,21 @@ const ContactMe = (props:ContactMePropsType) => {
                                     />
                                 </div>
                                 <div className='flex mb-[10px]'>
-                                    <textarea className="textarea rounded-[30px] px-[30px] w-full h-[150px] bg-white text-black"
-                                              id="comments"
-                                              placeholder="WRITE COMMENTS"
-                                              onChange={formik.handleChange}
-                                              value={formik.values.comments}
+                                    <textarea
+                                        className="textarea rounded-[30px] px-[30px] w-full h-[150px] bg-white text-black"
+                                        id="comments"
+                                        placeholder="WRITE COMMENTS"
+                                        onChange={formik.handleChange}
+                                        value={formik.values.comments}
                                     ></textarea>
                                 </div>
                                 <ReCAPTCHA sitekey={apiConfig.CAPTCHA_SITE_KEY as string}
                                            onChange={onCaptchaTestPass}
-                                className='my-[20px]'/>
-                                <button className="btn mb-[60px] rounded-full w-[40%] hover:bg-white hover:text-black hover:border-white" disabled={!reCaptchaTest} type='submit'>Submit</button>
+                                           className='my-[20px]'/>
+                                <button
+                                    className={`btn mb-[60px] rounded-full ${reCaptchaTest ? `w-[40%]` : `w-[0%] opacity-0` } hover:bg-white hover:text-black hover:border-white transition duration-300`}
+                                    disabled={!reCaptchaTest} type='submit'>Submit
+                                </button>
                             </form>
                         </div>
 
