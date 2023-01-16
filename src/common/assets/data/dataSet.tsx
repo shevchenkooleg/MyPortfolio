@@ -108,9 +108,9 @@ export const skills: Array<SkillType> = [
 export const projects: Array<ProjectType> = [
     // {title: 'SOCIAL NETWORK', preview: socialNetworkImage, description: projectDescription.socialNetwork, codeLink: 'https://github.com/shevchenkooleg/way_of_the_samurai_form_js_to_ts.git', pageLink: ''},
     {title: 'SIMPLE NOTES', preview: simpleNotesImage, description: projectDescription.simpleNotes, codeLink: 'https://github.com/Halera-inc/simple-notes-front', pageLink: 'https://simple-notes-app-pearl.vercel.app/'},
-    {title: 'TODO LIST', preview: todoImage, description: projectDescription.todoList, codeLink: 'https://github.com/shevchenkooleg/todo-toolkit.git', pageLink: ''},
+    {title: 'TODO LIST', preview: todoImage, description: projectDescription.todoList, codeLink: 'https://github.com/shevchenkooleg/todo-toolkit.git', pageLink: 'https://todolist-shevchenko-ov.vercel.app'},
     {title: 'MEMO CARDS', preview: cardImage, description: projectDescription.memoCards
-        , codeLink: 'https://github.com/shevchenkooleg/friday-cards.git', pageLink: ''},
+        , codeLink: 'https://github.com/shevchenkooleg/friday-cards.git', pageLink: 'https://memo-cards-shevchenkooleg.vercel.app'},
 ]
 export const catchWays: Array<ContactType> = [
     {
