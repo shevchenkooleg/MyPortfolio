@@ -25,6 +25,10 @@ const Project = ({title, preview, description, codeLink, pageLink}: ProjectProps
     const onMouseLeave = () => {
         setOver(false)
     }
+    const onLinkClickHandler = (e: React.MouseEvent<HTMLAnchorElement>, type: string) => {
+        e.preventDefault()
+        window.open(type === 'page' ? pageLink : codeLink)
+    }
 
 
 
@@ -48,8 +52,8 @@ const Project = ({title, preview, description, codeLink, pageLink}: ProjectProps
             <span className='text-[15px] mb-[15px] font-light px-[40px] font-description text-center text-justify'>{description.description}</span>
             <div className={`absolute bottom-0 flex justify-between items-center font-light border-t-[1px] border-background-gray-light w-full rounded-2xl
             px-[25px] h-full duration-700 ${over ? 'bg-black  text-white opacity-80': ''}`} onMouseOver={onMouseOverHandler} onMouseLeave={onMouseLeave}>
-                <a href={codeLink} className={`${over ? 'text-white opacity-100 text-[30px] ml-[40px]': 'opacity-0'} hover:text-[33px] hover:underline duration-500` }>Code</a>
-                <a href={pageLink} className={`${over ? 'text-white opacity-100 text-[30px] mr-[40px]': 'opacity-0'} hover:text-[33px] hover:underline duration-500`}>Page</a>
+                <a onClick={(e)=>onLinkClickHandler(e, 'code')} className={`${over ? 'text-white opacity-100 text-[30px] ml-[40px]': 'opacity-0'} hover:text-[33px] hover:underline duration-500` }>Code</a>
+                <a onClick={(e)=>onLinkClickHandler(e, 'page')} className={`${over ? 'text-white opacity-100 text-[30px] mr-[40px]': 'opacity-0'} hover:text-[33px] hover:underline duration-500`}>Page</a>
             </div>
         </motion.div>
     );

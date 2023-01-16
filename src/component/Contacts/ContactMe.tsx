@@ -76,7 +76,7 @@ const ContactMe = (props: ContactMePropsType) => {
     }
 
     const mapWidthDeterminate = () => {
-        console.log(document.documentElement.clientWidth)
+        // console.log(document.documentElement.clientWidth)
         if (document.documentElement.clientWidth < 500) {
             return [350, 300]
         } else {
@@ -89,13 +89,13 @@ const ContactMe = (props: ContactMePropsType) => {
             <div className='flex flex-col w-[90%] h-[100%] items-start border-b-[1px] border-black'>
                 <h2 className='text-[30px] pt-[100px] pb-[100px]'>CONTACT ME</h2>
                 <div className='flex w-full flex-wrap justify-between'>
-                    <div className='flex flex-col'>
+                    <div className='flex flex-col w-[40%]'>
                         <ContactMap width={mapWidthDeterminate()[0]} height={mapWidthDeterminate()[1]}/>
                     </div>
-                    <div className='flex flex-wrap flex-col justify-center'>
+                    <div className='flex flex-wrap flex-col justify-start w-[50%]'>
                         <div className='w-full'>
                             <form className='flex flex-col' onSubmit={formik.handleSubmit}>
-                                <div className='flex mb-[10px]'>
+                                <div className='flex mb-[15px]'>
                                     <input type="text"
                                            placeholder="FULL NAME"
                                            id="name"
@@ -112,7 +112,7 @@ const ContactMe = (props: ContactMePropsType) => {
                                            value={formik.values.email}
                                     />
                                 </div>
-                                <div className='flex mb-[10px]'>
+                                <div className='flex mb-[15px]'>
                                     <input type="text"
                                            placeholder="PHONE NUMBER"
                                            id="phone"
@@ -132,7 +132,7 @@ const ContactMe = (props: ContactMePropsType) => {
                                     <textarea
                                         className="textarea rounded-[30px] px-[30px] w-full h-[150px] bg-white text-black"
                                         id="comments"
-                                        placeholder="WRITE COMMENTS"
+                                        placeholder="WRITE YOUR MESSAGE"
                                         onChange={formik.handleChange}
                                         value={formik.values.comments}
                                     ></textarea>
@@ -141,7 +141,7 @@ const ContactMe = (props: ContactMePropsType) => {
                                            onChange={onCaptchaTestPass}
                                            className='my-[20px]'/>
                                 <button
-                                    className={`btn mb-[60px] rounded-full ${reCaptchaTest ? `w-[40%]` : `w-[0%] opacity-0` } hover:bg-white hover:text-black hover:border-white transition duration-700`}
+                                    className={`btn mb-[60px] rounded-full ${true ? `w-[40%]` : `w-[0%] opacity-0`} hover:bg-white hover:text-black hover:border-white transition duration-700`}
                                     disabled={!reCaptchaTest} type='submit'>Submit
                                 </button>
                             </form>

@@ -2,6 +2,7 @@ import React from "react";
 import todoImg from "../images/todo_image.jpeg";
 import cardImg from "../images/cards-app.jpeg";
 import socialImg from "../images/sochial-network.jpeg";
+import simpleNoteImg from "../images/simple-notes-app.png";
 import JSIcon from "../icons/JSIcon";
 import ReactIcon from "../icons/ReactIcon";
 import NextJSIcon from "../icons/NextJSIcon";
@@ -39,6 +40,10 @@ const projectDescription = {
             "programming patterns such as modules, a subscriber-listener and built both on the legacy class and modern functional components",
         technologies: ['redux', 'typescript', 'axios', 'formik', 'react-router', 'thunk'],
     },
+    'simpleNotes': {
+        description: "React SPA built using the NextJS framework and implementing both front-end and back-end functionality within a single project, also using a non-relational mongoDB database as a DBMS",
+        technologies: ['nextJS', 'typescript', 'redux-toolkit', 'mongo DB', 'thunk', 'axios', 'tailwindCSS']
+    },
     'todoList': {
         description: "React SPA witch built using a modern approach to working with application states - the Redux-Toolkit" +
             " library, as well as implementing the ability to automatically test program code using the jest library",
@@ -53,6 +58,7 @@ const projectDescription = {
 const todoImage = todoImg
 const cardImage = cardImg
 const socialNetworkImage = socialImg
+const simpleNotesImage = simpleNoteImg
 
 
 const skillDescription = {
@@ -100,7 +106,8 @@ export const skills: Array<SkillType> = [
 
 
 export const projects: Array<ProjectType> = [
-    {title: 'SOCIAL NETWORK', preview: socialNetworkImage, description: projectDescription.socialNetwork, codeLink: 'https://github.com/shevchenkooleg/way_of_the_samurai_form_js_to_ts.git', pageLink: ''},
+    // {title: 'SOCIAL NETWORK', preview: socialNetworkImage, description: projectDescription.socialNetwork, codeLink: 'https://github.com/shevchenkooleg/way_of_the_samurai_form_js_to_ts.git', pageLink: ''},
+    {title: 'SIMPLE NOTES', preview: simpleNotesImage, description: projectDescription.simpleNotes, codeLink: 'https://github.com/Halera-inc/simple-notes-front', pageLink: 'https://simple-notes-app-pearl.vercel.app/'},
     {title: 'TODO LIST', preview: todoImage, description: projectDescription.todoList, codeLink: 'https://github.com/shevchenkooleg/todo-toolkit.git', pageLink: ''},
     {title: 'MEMO CARDS', preview: cardImage, description: projectDescription.memoCards
         , codeLink: 'https://github.com/shevchenkooleg/friday-cards.git', pageLink: ''},

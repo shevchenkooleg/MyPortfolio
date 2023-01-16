@@ -40,7 +40,7 @@ const Intro = () => {
                     <motion.h1 variants={textAnimation} transition={{duration:1.5}}>I AM OLEG SHEVCHENKO</motion.h1>
                     <motion.p variants={textAnimation} transition={{duration:1.5}}>A FRONT-END DEVELOPER</motion.p>
                 </div>
-                <div className='w-[58%] relative'>
+                <div className='w-[52%] relative'>
                     <motion.img className='relative z-10' src={mainPic} alt="avatar"
                                 variants={imageAnimation} transition={{duration:1.5}} custom={1}/>
                     <motion.div className='w-[67%] h-[67%] bg-main-circle rounded-full absolute left-[3%] top-[10%] z-[0]'
