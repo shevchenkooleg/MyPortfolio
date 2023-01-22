@@ -18,6 +18,7 @@ export enum blockId {
     myProjects = 'projects',
     catchME = 'catchMe',
     contactME = 'contactME',
+    feedbackForm = 'feedbackForm',
 }
 
 function App() {

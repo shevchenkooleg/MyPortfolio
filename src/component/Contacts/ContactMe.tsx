@@ -6,6 +6,7 @@ import axios from 'axios';
 import {apiConfig} from "../../config/config";
 import ReCAPTCHA from "react-google-recaptcha";
 import {ContactType} from '../../common/assets/data/dataSet';
+import { blockId } from '../../App';
 
 
 type ContactMePropsType = {
@@ -27,8 +28,6 @@ const ContactMe = (props: ContactMePropsType) => {
         },
         // validationSchema: LoginValidationSchema,
         onSubmit: (values, actions) => {
-
-            console.log(apiConfig.SERVICE_ID)
 
             const data = {
                 service_id: apiConfig.SERVICE_ID as string,
@@ -85,7 +84,7 @@ const ContactMe = (props: ContactMePropsType) => {
                     <div className={s.mapContainer}>
                         <ContactMap width={mapWidthDeterminate()[0]} height={mapWidthDeterminate()[1]}/>
                     </div>
-                    <div className={s.feedbackFormContainer}>
+                    <div className={s.feedbackFormContainer} id={blockId.feedbackForm}>
                         <form className={s.feedbackForm} onSubmit={formik.handleSubmit}>
                             <div className={s.nameContainer}>
                                 <input type="text"
