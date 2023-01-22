@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import { ProjectType } from '../../common/assets/data/dataSet';
 import Project from "./Project/Project";
+import s from './MyProjects.module.css'
 
 
 export type MyProjectsPropsType = {
@@ -21,13 +22,29 @@ const textAnimation = {
 
 
 const MyProjects = (props: MyProjectsPropsType) => {
+
+    const viewportDelayDeterminate = () => {
+        if (document.documentElement.clientWidth > 1612) {
+            return 0.2
+        }
+        if (document.documentElement.clientWidth < 1612 && document.documentElement.clientWidth > 1288) {
+            return 0.2
+        } else if (document.documentElement.clientWidth <= 1288 && document.documentElement.clientWidth > 966) {
+            return 0.2
+        } else if (document.documentElement.clientWidth <= 966 && document.documentElement.clientWidth > 644) {
+            return 0.2
+        } else {
+            return 0.2
+        }
+    }
+
     return (
         <motion.section
-            initial='hidden' whileInView='visible' viewport={{amount:0.2, once: true}}
-            className='bg-background-gray h-[100%] flex justify-center items-center'>
-            <div className='flex flex-col w-[90%] h-full justify-start items-center'>
-                <motion.h2 variants={textAnimation} transition={{duration:1.5}} className='text-[35px] pt-[100px] font-light place-self-start'>MY PROJECTS</motion.h2>
-                <div className='flex w-full h-full flex-wrap justify-around items-start border-b-[1px] border-black pt-[50px] pb-[50px]'>
+            initial='hidden' whileInView='visible' viewport={{amount:viewportDelayDeterminate(), once: true}}
+            className={s.myProjectsBlock}>
+            <div className={s.container}>
+                <motion.h2 variants={textAnimation} transition={{duration:1.5}} className={s.title}>MY PROJECTS</motion.h2>
+                <div className={s.project}>
                     {props.projects.map((el, key)=>{
                         return <Project
                             // variants={imageAnimation} transition={{duration:1.5}}

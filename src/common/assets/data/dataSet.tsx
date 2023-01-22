@@ -15,7 +15,6 @@ import RouterIcon from "../icons/RouterIcon";
 import FormikIcon from "../icons/FormikIcon";
 import DockerIcon from "../icons/DockerIcon";
 import TailWIndCSS from "../icons/TailWIndCSS";
-import PostmanIcon from "../icons/PostmanIcon";
 
 export type ProjectType = {
     title: string
@@ -129,7 +128,7 @@ export const catchWays: Array<ContactType> = [
         value: 'shevchenko.oleg.87@gmail.com'
     },
     {
-        title: 'SOCIAL NETWORK:',
+        title: 'MY TELEGRAM:',
         logo: 'https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://wordpress.zcube.in/subhan/wp-content/uploads/2022/04/social-net-icon.png',
         value: '@Oleg_Sh_87'
     },

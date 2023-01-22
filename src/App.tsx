@@ -17,6 +17,7 @@ export enum blockId {
     skills = 'skills',
     myProjects = 'projects',
     catchME = 'catchMe',
+    contactME = 'contactME',
 }
 
 function App() {
@@ -60,7 +61,7 @@ function App() {
     return (
         <BrowserRouter>
             <div className="App">
-                <div id={blockId.intro} className='h-screen'>
+                <div id={blockId.intro} className='min-h-fit'>
                     <Header scrollPosition={scroll} scrollCallback={universalScrollHandler}/>
                     <Intro/>
                 </div>
@@ -71,9 +72,9 @@ function App() {
                     <MyProjects projects={projects}/>
                 </div>
                 <div id={blockId.catchME} className='min-h-[30vh]'>
-                    <CatchMeHere catchWays={catchWays}/>
+                    <CatchMeHere catchWays={catchWays} scrollCallback={universalScrollHandler}/>
                 </div>
-                <div className='min-h-[80%]'>
+                <div id={blockId.contactME} className='min-h-[80%]'>
                     <ContactMe contacts={contacts}/>
                 </div>
                 <div className='h-auto'>

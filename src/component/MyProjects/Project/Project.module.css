@@ -1,38 +1,47 @@
 .projectBlock {
-    width: 300px;
-    border: 1px solid;
-    background-color: #eaedef;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-    box-sizing: border-box;
+    width: 400px;
+    min-height: 540px;
+    background-color: #FFF;
+    margin-bottom: 50px;
+    position: relative;
+    @apply
+    rounded-2xl
 }
-
-.preview {
-    height: 200px;
-    width: 100%;
-    background-color: #61dafb;
-    align-items: center;
+.headerContainer {
     display: flex;
-    align-content: center;
-    flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: center;
+    align-items: start;
+    margin-left: 20px;
+    height: 90px;
 }
-
-.btn {
-    width: 100px;
-    height: 30px;
-    background-color: #ccdc9c;
+.header {
+    display: flex;
+    justify-items: start;
+    font-size: 14px;
+    margin-top: 20px;
+    color: #706d6d;
 }
-
-.description {
-
+.technics {
+    display: flex;
+    justify-content: start;
+    font-size: 14px;
+    color: #706d6d;
 }
-
-.link {
-
+.projectContainer {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    align-items: center;
+    justify-content: start;
+}
+@media (max-width: 450px){
+    .projectBlock{
+        width: 350px;
+    }
+    .projectContainer {
+        width: 350px;
+    }
 }
 

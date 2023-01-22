@@ -1,6 +1,8 @@
-import React, {useState} from 'react';
+import React, {forwardRef, useState} from 'react';
 import HeroiconsOutlineArrowRight from "../../../common/assets/icons/HeroiconsOutlineArrowRight";
 import { motion } from 'framer-motion';
+import {viewportSettingsType} from "../../../common/tools/types";
+import {viewportDelayDeterminate} from "../../../common/tools/viewportDelayDeterminate";
 
 type SkillPropsType = {
     title: string
@@ -19,7 +21,15 @@ const imageAnimation = {
     }
 }
 
-const Skill = ({title, icon, description}: SkillPropsType) => {
+const Skill = forwardRef(({title, icon, description}: SkillPropsType, ref:any) => {
+
+    const viewportSettings: viewportSettingsType = {
+        'default': 0.2,
+        'less1612': 0.2,
+        'less1288': 0.1,
+        'less966': 0.05,
+        'less644': 0.1
+    }
 
     const [over, setOver] = useState(false)
 
@@ -31,12 +41,12 @@ const Skill = ({title, icon, description}: SkillPropsType) => {
     }
 
     return (
-        <motion.div initial='hidden' whileInView='visible' viewport={{amount:0.2, once: true}}
-                    variants={imageAnimation} transition={{duration:1.5}}
+        <motion.div initial='hidden' whileInView='visible' viewport={{amount:viewportDelayDeterminate(document.documentElement.clientWidth, viewportSettings), once: true}}
+                    variants={imageAnimation} transition={{duration:1.5}} ref={ref}
                     className=' relative flex flex-col w-[270px] items-center justify-start h-[450px] bg-background-white rounded-2xl mb-[50px] mr-[20px]'>
             <div className='w-[90px] h-[90px] mt-[20px]'>{icon}</div>
             <h3 className='text-[24px] mt-[10px] mb-[20px]'>{title}</h3>
-            <span className='text-[15px] mb-[15px] font-light px-[20px] font-description text-center'>{description}</span>
+            <span className='text-[15px] mb-[15px] font-light px-[20px] font-description text-center text-justify'>{description}</span>
             <div className='absolute bottom-0 flex justify-between text-[14px] font-light border-t-[1px] border-background-gray-light w-full rounded-b-2xl
             px-[25px] h-[40px] pt-[8px] duration-700 hover:bg-black  hover:text-white' onMouseOver={onMouseOverHandler} onMouseLeave={onMouseLeave}>
                 READ MORE
@@ -44,7 +54,7 @@ const Skill = ({title, icon, description}: SkillPropsType) => {
             </div>
         </motion.div>
     );
-};
+});
 
 export default Skill;
 

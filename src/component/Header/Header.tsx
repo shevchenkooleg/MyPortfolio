@@ -1,6 +1,7 @@
 import {motion} from 'framer-motion';
 import React from 'react';
 import Navigation from "./Navigation/Navigation";
+import s from './Header.module.css'
 
 type HeaderPropsType = {
     scrollCallback: (id:string) => void
@@ -23,9 +24,9 @@ const Header: React.FC<HeaderPropsType> = ({scrollCallback, scrollPosition}) => 
         <motion.section initial='hidden'
                         whileInView='visible'
                         viewport={{once: true}}
-                        className='flex justify-center text-[18px] items-center h-[10%] bg-background-gray'>
+                        className={s.container}>
             <motion.div variants={textAnimation} transition={{duration: 1.5}}
-                        className='w-[90%] h-[100%] items-center flex justify-center border-b-[1px] border-black'>
+                        className={s.header}>
                 <Navigation scrollPosition={scrollPosition} scrollCallback={scrollCallback}/>
             </motion.div>
         </motion.section>

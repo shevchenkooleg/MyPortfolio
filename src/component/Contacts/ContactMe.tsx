@@ -40,14 +40,9 @@ const ContactMe = (props: ContactMePropsType) => {
                     'phone': JSON.stringify(values.phone),
                     'subject': JSON.stringify(values.subject),
                     'comments': JSON.stringify(values.comments),
-
-                    // 'g-recaptcha-response': '03AHJ_ASjnLA214KSNKFJAK12sfKASfehbmfd...'
                 }
             };
 
-            console.log(data)
-            // dispatch(loginTC({email: values.login, password: values.password, rememberMe: values.rememberMe}))
-            console.log('yoyoyo')
             axios({
                 method: 'post',
                 url: 'https://api.emailjs.com/api/v1.0/email/send',
@@ -71,90 +66,85 @@ const ContactMe = (props: ContactMePropsType) => {
 
 
     const onCaptchaTestPass = (value: any) => {
-        console.log(value)
         setReCaptchaTest(true)
     }
 
     const mapWidthDeterminate = () => {
-        // console.log(document.documentElement.clientWidth)
-        if (document.documentElement.clientWidth < 500) {
-            return [350, 300]
+        if (document.documentElement.clientWidth < 700) {
+            return [350, 600]
         } else {
-            return [550, 450]
+            return [650, 450]
         }
     }
 
     return (
-        <div className='h-full bg-background-gray flex justify-center'>
-            <div className='flex flex-col w-[90%] h-[100%] items-start border-b-[1px] border-black'>
-                <h2 className='text-[30px] pt-[100px] pb-[100px]'>CONTACT ME</h2>
-                <div className='flex w-full flex-wrap justify-between'>
-                    <div className='flex flex-col w-[40%]'>
+        <div className={s.contactMeBlock}>
+            <div className={s.mainContainer}>
+                <h2 className={s.title}>CONTACT ME</h2>
+                <div className={s.contacts}>
+                    <div className={s.mapContainer}>
                         <ContactMap width={mapWidthDeterminate()[0]} height={mapWidthDeterminate()[1]}/>
                     </div>
-                    <div className='flex flex-wrap flex-col justify-start w-[50%]'>
-                        <div className='w-full'>
-                            <form className='flex flex-col' onSubmit={formik.handleSubmit}>
-                                <div className='flex mb-[15px]'>
-                                    <input type="text"
-                                           placeholder="FULL NAME"
-                                           id="name"
-                                           className="input input-bordered px-[30px] w-full mr-[20px] max-w-xs rounded-full text-black-gray bg-white"
-                                           onChange={formik.handleChange}
-                                           value={formik.values.name}
+                    <div className={s.feedbackFormContainer}>
+                        <form className={s.feedbackForm} onSubmit={formik.handleSubmit}>
+                            <div className={s.nameContainer}>
+                                <input type="text"
+                                       placeholder="FULL NAME"
+                                       id="name"
+                                       // className="input input-bordered px-[30px] w-full mr-[20px] max-w-xs rounded-full text-black-gray bg-white"
+                                       className={`${s.inputBlock} + ${s.left}`}
+                                       onChange={formik.handleChange}
+                                       value={formik.values.name}
 
-                                    />
-                                    <input type="text"
-                                           placeholder="EMAIL ADDRESS"
-                                           id="email"
-                                           className="input input-bordered px-[30px] w-full max-w-xs rounded-full text-black bg-white"
-                                           onChange={formik.handleChange}
-                                           value={formik.values.email}
-                                    />
-                                </div>
-                                <div className='flex mb-[15px]'>
-                                    <input type="text"
-                                           placeholder="PHONE NUMBER"
-                                           id="phone"
-                                           className="input input-bordered px-[30px] w-full mr-[20px] max-w-xs rounded-full text-black bg-white"
-                                           onChange={formik.handleChange}
-                                           value={formik.values.phone}
-                                    />
-                                    <input type="text"
-                                           placeholder="SUBJECT"
-                                           id="subject"
-                                           className="input input-bordered px-[30px] w-full max-w-xs rounded-full text-black bg-white"
-                                           onChange={formik.handleChange}
-                                           value={formik.values.subject}
-                                    />
-                                </div>
-                                <div className='flex mb-[10px]'>
+                                />
+                                <input type="text"
+                                       placeholder="EMAIL ADDRESS"
+                                       id="email"
+                                       // className="input input-bordered px-[30px] w-full max-w-xs rounded-full text-black bg-white"
+                                       className={s.inputBlock}
+                                       onChange={formik.handleChange}
+                                       value={formik.values.email}
+                                />
+                            </div>
+                            <div className={s.phoneContainer}>
+                                <input type="text"
+                                       placeholder="PHONE NUMBER"
+                                       id="phone"
+                                       className={`${s.inputBlock} + ${s.left}`}
+                                       onChange={formik.handleChange}
+                                       value={formik.values.phone}
+                                />
+                                <input type="text"
+                                       placeholder="SUBJECT"
+                                       id="subject"
+                                       className={s.inputBlock}
+                                       onChange={formik.handleChange}
+                                       value={formik.values.subject}
+                                />
+                            </div>
+                            <div className={s.textAreaContainer}>
                                     <textarea
-                                        className="textarea rounded-[30px] px-[30px] w-full h-[150px] bg-white text-black"
+                                        className={s.textAreaBlock}
                                         id="comments"
                                         placeholder="WRITE YOUR MESSAGE"
                                         onChange={formik.handleChange}
                                         value={formik.values.comments}
                                     ></textarea>
-                                </div>
+                            </div>
+                            <div className={s.buttonBlock}>
                                 <ReCAPTCHA sitekey={apiConfig.CAPTCHA_SITE_KEY as string}
                                            onChange={onCaptchaTestPass}
-                                           className='my-[20px]'/>
+                                           className={s.captcha}/>
+                            </div>
+                            <div className={s.buttonBlock}>
                                 <button
-                                    className={`btn mb-[60px] rounded-full ${true ? `w-[40%]` : `w-[0%] opacity-0`} hover:bg-white hover:text-black hover:border-white transition duration-700`}
+                                    className={`${true ? `w-[40%]` : `w-[0%] opacity-0`} + ${s.button}`}
                                     disabled={!reCaptchaTest} type='submit'>Submit
                                 </button>
-                            </form>
-                        </div>
-
-
-                        <div className={s.btnContainer}>
-
-                        </div>
-
+                            </div>
+                        </form>
                     </div>
                 </div>
-
             </div>
         </div>
     );

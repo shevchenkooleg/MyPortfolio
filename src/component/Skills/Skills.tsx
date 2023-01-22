@@ -1,7 +1,10 @@
 import React from 'react';
-import Skill from "./Skill/Skill";
+import {MSkill} from "./Skill/Skill";
 import { motion } from 'framer-motion';
 import { SkillType } from '../../common/assets/data/dataSet';
+import s from './Skills.module.css'
+import {viewportDelayDeterminate} from '../../common/tools/viewportDelayDeterminate'
+import { viewportSettingsType } from '../../common/tools/types';
 
 type SkillsPropsType = {
     skills: Array<SkillType>
@@ -19,17 +22,28 @@ const textAnimation = {
     },
 }
 
+const viewportSettings: viewportSettingsType = {
+    'default': 0.2,
+    'less1612': 0.1,
+    'less1288': 0.1,
+    'less966': 0.05,
+    'less644': 0.04
+}
+
+
 
 const Skills = (props: SkillsPropsType) => {
+
+
     return (
         <motion.section
-            initial='hidden' whileInView='visible' viewport={{amount:0.2, once: true}}
-            className='bg-background-gray h-[100%] flex justify-center items-center'>
-            <div className='flex flex-col w-[90%] h-full justify-start items-center'>
-                <motion.h2 variants={textAnimation} transition={{duration:1.5}} className='text-[35px] pt-[100px] font-light place-self-start'>SKILLS</motion.h2>
-                <div className='flex w-full h-full flex-wrap justify-around items-start border-b-[1px] border-black pt-[50px] pb-[50px]'>
+            initial='hidden' whileInView='visible' viewport={{amount: viewportDelayDeterminate(document.documentElement.clientWidth, viewportSettings), once: true}}
+            className={s.skillsBlock}>
+            <div className={s.skillsContainer}>
+                <motion.h2 variants={textAnimation} transition={{duration:1.5}} className={s.title}>MY SKILLS</motion.h2>
+                <div className={s.skill}>
                     {
-                        props.skills.map((el, key)=> {return <Skill
+                        props.skills.map((el, key)=> {return <MSkill
                             key={key} title={el.title}
                             icon={el.icon}
                             description={el.description} />})

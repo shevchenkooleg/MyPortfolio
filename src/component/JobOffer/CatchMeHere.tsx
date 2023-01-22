@@ -1,16 +1,47 @@
 import React from 'react';
-import {MyUniversalButton} from "../../common/universalComponent/MyUniversalButton";
-import { MContactCard } from "./ContactCard";
-import { motion } from 'framer-motion';
-import { ContactType } from '../../common/assets/data/dataSet';
+import {MContactCard} from "./ContactCard";
+import {motion} from 'framer-motion';
+import {ContactType} from '../../common/assets/data/dataSet';
+import s from './CatchMeHere.module.css'
+import { MUniversalButton } from '../../common/universalComponent/UniversalButton';
 
 type CatchMeHerePropsType = {
     catchWays: Array<ContactType>
+    scrollCallback: (id:string) => void
 }
 
 const textAnimation = {
     hidden: {
         x: -50,
+        opacity: 0,
+    },
+    visible: (custom: number) => ({
+        x: 0,
+        opacity: 1,
+        transition: {
+            delay: 0.3 * (custom),
+            duration: 2
+        }
+    })
+}
+
+const imageAnimation = {
+    hidden: {
+        y: 50,
+        opacity: 0,
+    },
+    visible: (custom: number) => ({
+        y: 0,
+        opacity: 1,
+        transition: {
+            delay: 2 * (custom),
+            duration: 1.5
+        }
+    })
+}
+const buttonAnimation = {
+    hidden: {
+        x: 50,
         opacity: 0,
     },
     visible: {
@@ -19,34 +50,30 @@ const textAnimation = {
     },
 }
 
-const imageAnimation = {
-    hidden: {
-        y: 50,
-        opacity: 0,
-    },
-    visible: (custom: number)=>({
-        y:0,
-        opacity: 1,
-        transition: {delay: 0.3*(custom),
-            duration:2}
-    })
-}
 
-
-const CatchMeHere: React.FC<CatchMeHerePropsType> = ({catchWays}) => {
+const CatchMeHere: React.FC<CatchMeHerePropsType> = ({catchWays, scrollCallback}) => {
     return (
         <motion.section
-            initial='hidden' whileInView='visible' viewport={{amount:0.2, once: true}}
-            className='bg-background-gray h-[100%] flex justify-center items-center'>
-            <div className='flex flex-col w-[90%] h-full justify-start items-center'>
-                <div className='flex pt-[100px] w-full justify-around'>
-                    <motion.h2 variants={textAnimation} transition={{duration:1.5}} className='text-[30px]'>LET'S WORK TOGETHER ON YOUR NEXT PROJECT</motion.h2>
-                    <MyUniversalButton title={'Hire Me'} callback={()=>{}}/>
+            initial='hidden' whileInView='visible' viewport={{amount: 0.2, once: true}}
+            className={s.catchMEHereBlock}>
+            <div className={s.container}>
+                <div className={s.title}>
+                    <motion.h2 variants={textAnimation} custom={1} className={s.titleText}>LET'S WORK
+                        TOGETHER ON YOUR NEXT PROJECT
+                    </motion.h2>
+                    <div className={s.button}>
+                        <MUniversalButton title={'Invite me for an interview'} scrollCallback={scrollCallback} variants={buttonAnimation} transition={{duration: 1.5}}/>
+                    </div>
                 </div>
-                <span>'Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'</span>
-                <div className='flex flex-wrap w-full h-full justify-around items-start border-b-[1px] border-black pt-[30px]'>
-                    {catchWays.map((el,k)=><MContactCard variants={imageAnimation} transition={{duration:2}} custom={k}
-                        key={k} title={el.title} logo={el.logo} value={el.value}/>)}
+                <motion.span variants={textAnimation} custom={4}>
+                    If my skills and experience turned out to be interesting for you and you want to cooperate, please get in touch with me in any of the following ways or use the feedback form at the bottom of this page.
+                </motion.span>
+                <div
+                    // className='flex flex-wrap w-full h-full justify-around items-start border-b-[1px] border-black pt-[30px]'>
+                    className={s.contact}>
+                    {catchWays.map((el, k) => <MContactCard variants={imageAnimation} transition={{duration: 2}}
+                                                            custom={k}
+                                                            key={k} title={el.title} logo={el.logo} value={el.value}/>)}
                 </div>
 
 

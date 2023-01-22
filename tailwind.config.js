@@ -9,6 +9,7 @@ module.exports = {
         "background-gray-gradient": "#cbc4bc",
         "background-gray-light": "#efe8db",
         "background-white": '#FFF',
+        "menu-hover-gray":"#ada8a2",
         "main-circle": '#f5b731',
         'secondary-text-color': '#706d6d',
       },
