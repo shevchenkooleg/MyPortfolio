@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import React, {useState} from 'react';
 import { ProjectType } from '../../../common/assets/data/dataSet';
+import s from './Project.module.css'
 
 type ProjectPropsType = ProjectType
 
@@ -36,14 +37,14 @@ const Project = ({title, preview, description, codeLink, pageLink}: ProjectProps
         <motion.div
             initial='hidden' whileInView='visible' viewport={{amount:0.2, once: true}}
             variants={imageAnimation} transition={{duration:1.5}}
-            className='flex flex-col w-[400px]  min-h-[540px] bg-background-white rounded-2xl mb-[50px] relative'
+            className={s.projectBlock}
             onMouseOver={onMouseOverHandler} onMouseLeave={onMouseLeave}>
-            <div className='flex flex-col items-start ml-[20px] h-[90px]'>
-                <div className='flex items-start text-[14px] mt-[20px] text-secondary-text-color'>Technologies:</div>
-                <div className='flex justify-start text-[14px] text-secondary-text-color'>{description.technologies.join(', ').toUpperCase()}</div>
+            <div className={s.headerContainer}>
+                <div className={s.header}>Technologies:</div>
+                <div className={s.technics}>{description.technologies.join(', ').toUpperCase()}</div>
             </div>
 
-            <div className='flex flex-col w-[400px] items-center justify-start'>
+            <div className={s.projectContainer}>
                 <h3 className='text-[24px] my-[10px] mt-[10px]'>{title}</h3>
                 <div className='w-[80%] mt-[20px] mb-[30px]'>
                     <img src={preview} alt=""/>
