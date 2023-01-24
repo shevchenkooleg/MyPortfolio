@@ -2,7 +2,7 @@ import React from "react";
 import todoImg from "../images/todo_image.jpeg";
 import cardImg from "../images/cards-app.jpeg";
 import socialImg from "../images/sochial-network.jpeg";
-import simpleNoteImg from "../images/simple-notes-app.png";
+import simpleNoteImg from "../images/simple-notes-app2.png";
 import JSIcon from "../icons/JSIcon";
 import ReactIcon from "../icons/ReactIcon";
 import NextJSIcon from "../icons/NextJSIcon";
@@ -15,6 +15,10 @@ import RouterIcon from "../icons/RouterIcon";
 import FormikIcon from "../icons/FormikIcon";
 import DockerIcon from "../icons/DockerIcon";
 import TailWIndCSS from "../icons/TailWIndCSS";
+import instagramLogo from '../icons/instagram.png'
+import telegramLogo from '../icons/telegram.png'
+import facebookLogo from '../icons/facebook.png'
+import linkedInLogo from '../icons/linkedin.png'
 
 export type ProjectType = {
     title: string
@@ -32,6 +36,11 @@ export type ContactType = {
     title: string
     logo: string
     value: string
+}
+export type SocialCardsType = {
+    logo: string
+    altLogo: string
+    link: string
 }
 const projectDescription = {
     'socialNetwork': {
@@ -137,4 +146,11 @@ export const contacts: Array<ContactType> = [
     {title: 'Email:', logo: 'logo', value: 'shevchenko.oleg.87@gmail.com'},
     {title: 'Phone:', logo: 'logo', value: '+7 938 294-64-54'},
     {title: 'Telegram:', logo: 'logo', value: '@Oleg_Sh_87'},
+]
+
+export const socialCards: Array<SocialCardsType> = [
+    {logo: instagramLogo, altLogo: "instagram", link: 'https://www.instagram.com/oleg.shevchenko.87'},
+    {logo: telegramLogo, altLogo: "telegram", link: 'https://t.me/Oleg_Sh_87'},
+    {logo: facebookLogo, altLogo: "facebook", link: 'https://t.me/Oleg_Sh_87'},
+    {logo: linkedInLogo, altLogo: "linkedIn", link: 'https://t.me/Oleg_Sh_87'},
 ]

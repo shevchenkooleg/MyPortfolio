@@ -137,7 +137,7 @@ const ContactMe = (props: ContactMePropsType) => {
                             </div>
                             <div className={s.buttonBlock}>
                                 <button
-                                    className={`${true ? `w-[40%]` : `w-[0%] opacity-0`} + ${s.button}`}
+                                    className={`${reCaptchaTest ? `w-[40%]` : `w-[0%] opacity-0`} + ${s.button}`}
                                     disabled={!reCaptchaTest} type='submit'>Submit
                                 </button>
                             </div>

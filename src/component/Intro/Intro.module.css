@@ -24,6 +24,8 @@
     position: relative;
     /*border: 1px solid black;*/
     width: 42%;
+    display: flex;
+    align-self: flex-end;
 }
 
 .photo {
@@ -45,7 +47,8 @@
 }
 @media screen and (max-device-aspect-ratio: 16/10) {
     .main {
-        height: 68vw;
+        /*height: 68vw;*/
+        min-height: 60vw;
     }
 }
 @media (max-width: 1845px) {
@@ -90,7 +93,7 @@
     }
     .pictureBlock {
         width: 80%;
-        margin-bottom: 30px;
+        /*margin-bottom: 30px;*/
     }
 }
 @media (max-width: 530px) {
