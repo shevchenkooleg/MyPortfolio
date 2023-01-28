@@ -16,7 +16,7 @@ const imageAnimation = {
     }
 }
 
-const Project = ({title, preview, description, codeLink, pageLink}: ProjectPropsType) => {
+const Project = ({title, preview, description, codeLink, pageLink, tip}: ProjectPropsType) => {
 
     const [over, setOver] = useState(false)
 
@@ -58,9 +58,9 @@ const Project = ({title, preview, description, codeLink, pageLink}: ProjectProps
                     <a onClick={(e)=>onLinkClickHandler(e, 'page')} className={`${over ? 'text-white opacity-100 text-[30px] mr-[40px]': 'opacity-0'} hover:text-[33px] hover:underline duration-500`}>Page</a>
                 </div>
             </div>
-            <div className={s.adviseContainer}>
-                <div className={s.technics}><pre><span className='font-bold'>Tip: </span></pre>to try this application, you need to register with any fake email or use quick authorization through google</div>
-            </div>
+            {tip && <div className={s.adviseContainer}>
+                <div className={s.technics}><pre><span className='font-bold'>Tip: </span></pre>{tip}</div>
+            </div>}
 
         </motion.div>
     );

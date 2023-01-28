@@ -54,6 +54,7 @@ const MyProjects = (props: MyProjectsPropsType) => {
                             description={el.description}
                             codeLink={el.codeLink}
                             pageLink={el.pageLink}
+                            tip={el.tip}
                         />
                     })}
                 </div>

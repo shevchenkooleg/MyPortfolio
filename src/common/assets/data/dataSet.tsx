@@ -26,11 +26,13 @@ export type ProjectType = {
     description: { description: string, technologies: string[] }
     codeLink: string
     pageLink: string
+    tip: string
 }
 export type SkillType = {
     title: string
     icon: React.ReactNode
     description: string
+    link: string
 }
 export type ContactType = {
     title: string
@@ -97,28 +99,37 @@ const skillDescription = {
 }
 
 export const skills: Array<SkillType> = [
-    {title: 'JS', icon: <JSIcon/>, description: skillDescription.JS},
-    {title: 'React', icon: <ReactIcon/>, description: skillDescription.React},
-    {title: 'Next.js', icon: <NextJSIcon/>, description: skillDescription.NextJS},
-    {title: 'Redux', icon: <ReduxIcon/>, description: skillDescription.Redux},
-    {title: 'TypeScript', icon: <TypeScriptIcon/>, description: skillDescription.TypeScript},
-    {title: 'HTMl5', icon: <HTMLIcon/>, description: skillDescription.HTML5},
-    {title: 'CSS3', icon: <CSSIcon/>, description: skillDescription.CSS3},
-    {title: 'SCSS/SASS', icon: <SCSSIcon/>, description: skillDescription.SASS},
-    {title: 'RRD', icon: <RouterIcon/>, description: skillDescription.RRD},
+    {title: 'JS', icon: <JSIcon/>, description: skillDescription.JS, link: 'https://www.javascript.com/'},
+    {title: 'React', icon: <ReactIcon/>, description: skillDescription.React, link: 'https://reactjs.org/'},
+    {title: 'Next.js', icon: <NextJSIcon/>, description: skillDescription.NextJS, link: 'https://nextjs.org/'},
+    {title: 'Redux', icon: <ReduxIcon/>, description: skillDescription.Redux, link: 'https://redux.js.org/'},
+    {title: 'TypeScript', icon: <TypeScriptIcon/>, description: skillDescription.TypeScript, link: 'https://www.typescriptlang.org/'},
+    {title: 'HTMl5', icon: <HTMLIcon/>, description: skillDescription.HTML5, link: 'https://html5up.net/'},
+    {title: 'CSS3', icon: <CSSIcon/>, description: skillDescription.CSS3, link: 'https://developer.mozilla.org/en-US/docs/Web/CSS'},
+    {title: 'SCSS/SASS', icon: <SCSSIcon/>, description: skillDescription.SASS, link: 'https://sass-lang.com/documentation/'},
+    {title: 'RRD', icon: <RouterIcon/>, description: skillDescription.RRD, link: 'https://reactrouter.com/en/main'},
     // {title: 'Postman', icon: <PostmanIcon/>, description: skillDescription.Postman},
-    {title: 'Formik', icon: <FormikIcon/>, description: skillDescription.Formik},
-    {title: 'Docker', icon: <DockerIcon/>, description: skillDescription.Docker},
-    {title: 'TailwindCSS', icon: <TailWIndCSS/>, description: skillDescription.TailwindCSS},
+    {title: 'Formik', icon: <FormikIcon/>, description: skillDescription.Formik, link: 'https://formik.org/'},
+    {title: 'Docker', icon: <DockerIcon/>, description: skillDescription.Docker, link: 'https://www.docker.com/'},
+    {title: 'TailwindCSS', icon: <TailWIndCSS/>, description: skillDescription.TailwindCSS, link: 'https://tailwindcss.com/'},
 ];
 
 
 export const projects: Array<ProjectType> = [
     // {title: 'SOCIAL NETWORK', preview: socialNetworkImage, description: projectDescription.socialNetwork, codeLink: 'https://github.com/shevchenkooleg/way_of_the_samurai_form_js_to_ts.git', pageLink: ''},
-    {title: 'SIMPLE NOTES', preview: simpleNotesImage, description: projectDescription.simpleNotes, codeLink: 'https://github.com/Halera-inc/simple-notes-front', pageLink: 'https://simple-notes-app-pearl.vercel.app/'},
-    {title: 'TODO LIST', preview: todoImage, description: projectDescription.todoList, codeLink: 'https://github.com/shevchenkooleg/todo-toolkit.git', pageLink: 'https://todolist-shevchenko-ov.vercel.app'},
+    {title: 'SIMPLE NOTES', preview: simpleNotesImage, description: projectDescription.simpleNotes,
+        codeLink: 'https://github.com/Halera-inc/simple-notes-front',
+        pageLink: 'https://simple-notes-app-pearl.vercel.app/',
+        tip: 'to try this application, you need to register with any fake email or use quick authorization through google'
+    },
+    {title: 'TODO LIST', preview: todoImage, description: projectDescription.todoList,
+        codeLink: 'https://github.com/shevchenkooleg/todo-toolkit.git',
+        pageLink: 'https://todolist-shevchenko-ov.vercel.app',
+        tip: ''},
     {title: 'MEMO CARDS', preview: cardImage, description: projectDescription.memoCards
-        , codeLink: 'https://github.com/shevchenkooleg/friday-cards.git', pageLink: 'https://memo-cards-shevchenkooleg.vercel.app'},
+        , codeLink: 'https://github.com/shevchenkooleg/friday-cards.git',
+        pageLink: 'https://memo-cards-shevchenkooleg.vercel.app',
+        tip: 'to try this application, you need to register with any fake email or use quick authorization through google'},
 ]
 export const catchWays: Array<ContactType> = [
     {
@@ -151,6 +162,6 @@ export const contacts: Array<ContactType> = [
 export const socialCards: Array<SocialCardsType> = [
     {logo: instagramLogo, altLogo: "instagram", link: 'https://www.instagram.com/oleg.shevchenko.87'},
     {logo: telegramLogo, altLogo: "telegram", link: 'https://t.me/Oleg_Sh_87'},
-    {logo: facebookLogo, altLogo: "facebook", link: 'https://t.me/Oleg_Sh_87'},
-    {logo: linkedInLogo, altLogo: "linkedIn", link: 'https://t.me/Oleg_Sh_87'},
+    {logo: facebookLogo, altLogo: "facebook", link: 'https://www.facebook.com/oleg.shevchenko.87'},
+    {logo: linkedInLogo, altLogo: "linkedIn", link: 'https://linkedin.com/in/oleg-shevchenko-85622a231'},
 ]

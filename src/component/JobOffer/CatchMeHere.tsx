@@ -34,7 +34,7 @@ const imageAnimation = {
         y: 0,
         opacity: 1,
         transition: {
-            delay: 2 * (custom),
+            delay: 0.5 * (custom),
             duration: 1.5
         }
     })

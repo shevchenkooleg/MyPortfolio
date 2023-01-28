@@ -46,7 +46,8 @@ const Skills = (props: SkillsPropsType) => {
                         props.skills.map((el, key)=> {return <MSkill
                             key={key} title={el.title}
                             icon={el.icon}
-                            description={el.description} />})
+                            description={el.description}
+                            link={el.link} />})
                     }
                 </div>
             </div>
