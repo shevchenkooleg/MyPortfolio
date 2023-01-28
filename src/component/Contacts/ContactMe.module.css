@@ -22,6 +22,7 @@
 }
 
 .contacts {
+    position: relative;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -76,6 +77,15 @@
     bg-white
     rounded-full
 }
+.inputBlockError {
+    width: 315px;
+    height: 48px;
+    @apply
+    input
+    bg-background-error
+    text-black
+    rounded-full
+}
 .textAreaBlock {
     width: 100%;
     height: 150px;
@@ -98,6 +108,7 @@
 }
 .button {
     margin-bottom: 60px;
+
     @apply
     btn
     rounded-full

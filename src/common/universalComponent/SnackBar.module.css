@@ -1,0 +1,24 @@
+.main {
+    position: absolute;
+    right: -380px;
+    transition: 1000ms;
+    @apply
+    alert
+    alert-warning
+    shadow-lg
+    /*right-0*/
+    w-[300px]
+}
+
+.mainActive {
+    position: absolute;
+    right: -50px;
+    transition: 1000ms;
+    @apply
+    alert
+    alert-warning
+    shadow-lg
+        /*right-0*/
+    w-[300px]
+}
+

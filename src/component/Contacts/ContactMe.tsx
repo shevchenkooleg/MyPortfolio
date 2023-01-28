@@ -7,6 +7,8 @@ import {apiConfig} from "../../config/config";
 import ReCAPTCHA from "react-google-recaptcha";
 import {ContactType} from '../../common/assets/data/dataSet';
 import { blockId } from '../../App';
+import {FeedBackValidationSchema} from "../../common/tools/validators/validatos";
+import SnackBar from "../../common/universalComponent/SnackBar";
 
 
 type ContactMePropsType = {
@@ -26,7 +28,7 @@ const ContactMe = (props: ContactMePropsType) => {
             subject: '',
             comments: '',
         },
-        // validationSchema: LoginValidationSchema,
+        validationSchema: FeedBackValidationSchema,
         onSubmit: (values, actions) => {
 
             const data = {
@@ -56,15 +58,18 @@ const ContactMe = (props: ContactMePropsType) => {
 
         }
     })
-    // const errorHandler = () => {
-    //     if (!!formik.errors.login && formik.touched.login && formik.errors.login) {
-    //         openNotificationWithIcon('error', 'Incorrect login', formik.errors.login)}
-    //     if (!!formik.errors.password && formik.touched.password && formik.errors.password) {
-    //         openNotificationWithIcon('error', 'Incorrect password', formik.errors.password)}
-    // }
+    const errorHandler = () => {
+        if (!!formik.errors.email && formik.touched.email && formik.errors.email) {
+            console.log('email')
+            return true
+        }
+        return false
+    }
 
 
-    const onCaptchaTestPass = (value: any) => {
+
+
+    const onCaptchaTestPass = () => {
         setReCaptchaTest(true)
     }
 
@@ -94,15 +99,17 @@ const ContactMe = (props: ContactMePropsType) => {
                                        className={`${s.inputBlock} + ${s.left}`}
                                        onChange={formik.handleChange}
                                        value={formik.values.name}
-
+                                       required={true}
+                                       onBlur={formik.handleBlur}
                                 />
                                 <input type="text"
                                        placeholder="EMAIL ADDRESS"
                                        id="email"
                                        // className="input input-bordered px-[30px] w-full max-w-xs rounded-full text-black bg-white"
-                                       className={s.inputBlock}
+                                       className = {errorHandler() ? s.inputBlockError : s.inputBlock}
                                        onChange={formik.handleChange}
                                        value={formik.values.email}
+                                       required={true}
                                 />
                             </div>
                             <div className={s.phoneContainer}>
@@ -128,6 +135,7 @@ const ContactMe = (props: ContactMePropsType) => {
                                         placeholder="WRITE YOUR MESSAGE"
                                         onChange={formik.handleChange}
                                         value={formik.values.comments}
+                                        required={true}
                                     ></textarea>
                             </div>
                             <div className={s.buttonBlock}>
@@ -137,13 +145,21 @@ const ContactMe = (props: ContactMePropsType) => {
                             </div>
                             <div className={s.buttonBlock}>
                                 <button
+
                                     className={`${reCaptchaTest ? `w-[40%]` : `w-[0%] opacity-0`} + ${s.button}`}
                                     disabled={!reCaptchaTest} type='submit'>Submit
+
+                                    {/*for localhost feedback form test without recaptcha*/}
+                                    {/*className={`${true ? `w-[40%]` : `w-[0%] opacity-0`} + ${s.button}`}*/}
+                                    {/*type='submit'>Submit*/}
                                 </button>
+                                <SnackBar error={errorHandler()}/>
                             </div>
                         </form>
                     </div>
+
                 </div>
+
             </div>
         </div>
     );
