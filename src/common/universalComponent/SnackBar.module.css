@@ -1,24 +1,17 @@
 .main {
     position: absolute;
-    right: -380px;
+    right: -390px;
     transition: 1000ms;
+    width: 300px;
     @apply
     alert
     alert-warning
     shadow-lg
-    /*right-0*/
-    w-[300px]
+    w-[250px]
 }
 
-.mainActive {
-    position: absolute;
-    right: -50px;
+.active {
+    right: 0;
     transition: 1000ms;
-    @apply
-    alert
-    alert-warning
-    shadow-lg
-        /*right-0*/
-    w-[300px]
 }
 

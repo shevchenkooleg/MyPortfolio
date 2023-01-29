@@ -12,7 +12,7 @@ module.exports = {
         "menu-hover-gray":"#ada8a2",
         "main-circle": '#f5b731',
         'secondary-text-color': '#706d6d',
-        'background-error': 'rgba(227,9,9,0.73)'
+        'background-error': 'rgba(169,6,6,0.76)'
       },
       fontFamily: {
         'sans': ['Oswald', 'sans-serif'],

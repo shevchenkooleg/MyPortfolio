@@ -106,7 +106,7 @@ const ContactMe = (props: ContactMePropsType) => {
                                        placeholder="EMAIL ADDRESS"
                                        id="email"
                                        // className="input input-bordered px-[30px] w-full max-w-xs rounded-full text-black bg-white"
-                                       className = {errorHandler() ? s.inputBlockError : s.inputBlock}
+                                       className ={`${s.inputBlock} ${errorHandler() ? s.inputBlockError : ''}`}
                                        onChange={formik.handleChange}
                                        value={formik.values.email}
                                        required={true}
@@ -145,7 +145,6 @@ const ContactMe = (props: ContactMePropsType) => {
                             </div>
                             <div className={s.buttonBlock}>
                                 <button
-
                                     className={`${reCaptchaTest ? `w-[40%]` : `w-[0%] opacity-0`} + ${s.button}`}
                                     disabled={!reCaptchaTest} type='submit'>Submit
 

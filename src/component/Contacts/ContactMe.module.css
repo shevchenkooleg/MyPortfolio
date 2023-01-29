@@ -78,13 +78,9 @@
     rounded-full
 }
 .inputBlockError {
-    width: 315px;
-    height: 48px;
     @apply
-    input
     bg-background-error
-    text-black
-    rounded-full
+    border-black
 }
 .textAreaBlock {
     width: 100%;
