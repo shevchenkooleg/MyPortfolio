@@ -34,12 +34,17 @@ const Skill = forwardRef(({title, icon, description, link}: SkillPropsType, ref:
     }
 
     const [over, setOver] = useState(false)
+    const [accessLink, setAccessLink] = useState(false)
 
     const onMouseOverHandler = () => {
         setOver(true)
+        setTimeout(()=>{
+            setAccessLink(true)
+        },1000)
     }
     const onMouseLeave = () => {
         setOver(false)
+        setAccessLink(false)
     }
     const onReadMoreClickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
         e.preventDefault()
@@ -69,7 +74,7 @@ const Skill = forwardRef(({title, icon, description, link}: SkillPropsType, ref:
                 <div className={`${s.skillBlockMobile} ${over ? s.mobileActive : ''}`}
                      onMouseOver={onMouseOverHandler} onMouseLeave={onMouseLeave}>
                     <div className={`w-[90px] h-[90px] duration-1000 ${over ? 'opacity-0' : ''}`}>{icon}</div>
-                    <div className={`${s.mobileLink} ${over ? s.linkActive : ''}`} onClick={over ? onReadMoreClickHandler : undefined}>read more</div>
+                    <div className={`${s.mobileLink} ${over ? s.linkActive : ''}`} onClick={accessLink ? onReadMoreClickHandler : undefined}>read more</div>
                 </div>
 
             </motion.div>
