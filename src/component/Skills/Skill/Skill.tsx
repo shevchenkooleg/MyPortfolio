@@ -30,7 +30,7 @@ const Skill = forwardRef(({title, icon, description, link}: SkillPropsType, ref:
         'less1612': 0.2,
         'less1288': 0.1,
         'less966': 0.05,
-        'less644': 0.1
+        'less644': 0.9
     }
 
     const [over, setOver] = useState(false)
@@ -64,17 +64,14 @@ const Skill = forwardRef(({title, icon, description, link}: SkillPropsType, ref:
     } else {
         return (
             <motion.div initial='hidden' whileInView='visible' viewport={{amount:viewportDelayDeterminate(document.documentElement.clientWidth, viewportSettings), once: true}}
-                        variants={imageAnimation} transition={{duration:1.5}} ref={ref}
-                        className={`${s.skillBlockMobile} ${over ? s.mobileActive : ''}`}
-                        onMouseOver={onMouseOverHandler} onMouseLeave={onMouseLeave}>
-                <div className='w-[90px] h-[90px]'>{icon}</div>
-                {/*<h3 className='text-[24px] mt-[10px] mb-[20px]'>{title}</h3>*/}
-                {/*<span className='text-[15px] mb-[15px] font-light px-[20px] font-description text-center text-justify'>{description}</span>*/}
-            {/*    <div className='absolute bottom-0 flex justify-between text-[14px] font-light border-t-[1px] border-background-gray-light w-full rounded-b-2xl*/}
-            {/*px-[25px] h-[40px] pt-[8px] duration-700 hover:bg-black  hover:text-white' onMouseOver={onMouseOverHandler} onMouseLeave={onMouseLeave} onClick={onReadMoreClickHandler}>*/}
-            {/*        READ MORE*/}
-            {/*        <HeroiconsOutlineArrowRight color={over ? 'white' : 'black'}/>*/}
-            {/*    </div>*/}
+                        variants={imageAnimation} transition={{duration:1.5}} ref={ref} className={s.skillContainerMobile}
+                        >
+                <div className={`${s.skillBlockMobile} ${over ? s.mobileActive : ''}`}
+                     onMouseOver={onMouseOverHandler} onMouseLeave={onMouseLeave}>
+                    <div className={`w-[90px] h-[90px] duration-1000 ${over ? 'opacity-0' : ''}`}>{icon}</div>
+                    <div className={`${s.mobileLink} ${over ? s.linkActive : ''}`} onClick={over ? onReadMoreClickHandler : undefined}>read more</div>
+                </div>
+
             </motion.div>
         )
     }

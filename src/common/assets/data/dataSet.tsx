@@ -129,7 +129,7 @@ export const projects: Array<ProjectType> = [
     {title: 'MEMO CARDS', preview: cardImage, description: projectDescription.memoCards
         , codeLink: 'https://github.com/shevchenkooleg/friday-cards.git',
         pageLink: 'https://memo-cards-shevchenkooleg.vercel.app',
-        tip: 'to try this application, you need to register with any fake email or use quick authorization through google'},
+        tip: 'to try this application, you need to register with any fake email'},
 ]
 export const catchWays: Array<ContactType> = [
     {

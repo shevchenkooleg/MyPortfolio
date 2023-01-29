@@ -27,7 +27,7 @@ const viewportSettings: viewportSettingsType = {
     'less1612': 0.1,
     'less1288': 0.1,
     'less966': 0.05,
-    'less644': 0.04
+    'less644': 0.309
 }
 
 
@@ -47,7 +47,7 @@ const Skills = (props: SkillsPropsType) => {
                             key={key} title={el.title}
                             icon={el.icon}
                             description={el.description}
-                            link={el.link} />})
+                            link={el.link}/>})
                     }
                 </div>
             </div>
