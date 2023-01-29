@@ -27,7 +27,7 @@ const viewportSettings: viewportSettingsType = {
     'less1612': 0.1,
     'less1288': 0.1,
     'less966': 0.05,
-    'less644': 0.309
+    'less644': 0.15
 }
 
 
