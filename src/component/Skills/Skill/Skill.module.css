@@ -9,6 +9,29 @@
     padding: 20px;
 }
 
+.skillBlockMobile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 130px;
+    height: 130px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px 50px 20px;
+    transition: 1000ms;
+    transform: rotate(-0.25turn);
+    @apply
+    rounded-2xl
+    bg-background-white
+}
+.mobileActive {
+    /*transform: rotate(-0.25turn);*/
+    /*transform: translate(10px, 10px);*/
+    /*background-color: black;*/
+    /*opacity: 0.9%;*/
+}
+
+
 .icon {
     height: 60px;
     width: 60px;
