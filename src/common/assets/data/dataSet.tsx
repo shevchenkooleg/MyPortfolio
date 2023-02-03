@@ -120,7 +120,7 @@ export const projects: Array<ProjectType> = [
     {title: 'SIMPLE NOTES', preview: simpleNotesImage, description: projectDescription.simpleNotes,
         codeLink: 'https://github.com/Halera-inc/simple-notes-front',
         pageLink: 'https://simple-notes-app-pearl.vercel.app/',
-        tip: 'to try this application, you need to register with any fake email or use a quick authorization through google'
+        tip: 'to try this application, you need to register with any fake email or use an quick authorization through google'
     },
     {title: 'TO DO LIST', preview: todoImage, description: projectDescription.todoList,
         codeLink: 'https://github.com/shevchenkooleg/todo-toolkit.git',
