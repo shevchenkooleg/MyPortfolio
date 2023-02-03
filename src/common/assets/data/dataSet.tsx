@@ -51,16 +51,16 @@ const projectDescription = {
         technologies: ['redux', 'typescript', 'axios', 'formik', 'react-router', 'thunk'],
     },
     'simpleNotes': {
-        description: "React SPA built using the NextJS framework and implementing both front-end and back-end functionality within a single project, also using a non-relational mongoDB database as a DBMS",
+        description: "React SPA built using the NextJS framework and implementing both front-end and back-end functionalities within a single project, also using a non-relational mongoDB database as a DBMS",
         technologies: ['nextJS', 'typescript', 'redux-toolkit', 'mongo DB', 'thunk', 'axios', 'tailwindCSS']
     },
     'todoList': {
-        description: "React SPA witch built using a modern approach to working with application states - the Redux-Toolkit" +
-            " library, as well as implementing the ability to automatically test program code using the jest library",
+        description: "React SPA which was built using a modern approach to working with application states - the Redux-Toolkit" +
+            " library, as well as implementing the ability to automatically test a program code using the Jest library",
         technologies: ['redux-toolkit', 'typescript', 'axios', 'jest', 'thunk', 'ant-design'],
     },
     'memoCards': {
-        description: "React SPA for educational assistance that implemented TypeScript - static-typed language and using RestAPI, FLUX, Thunk technologies",
+        description: "React SPA application for an educational assistance that uses RestAPI, FLUX, Thunk technologies and in which TypeScript (the static-typed language) was implemented",
         technologies: ['redux','typescript', 'axios', 'formik', 'react-router', 'redux-thunk', 'material-ui'],
     },
 }
@@ -76,26 +76,26 @@ const skillDescription = {
         'As of 2022, 98% of websites use JavaScript on the client side for webpage behavior, often incorporating third-party libraries.',
     'React': 'Free and open-source front-end JavaScript library for building user interfaces based on UI components. ' +
         'It is maintained by Meta and a community of individual developers and companies.',
-    'Redux': 'Open-source JavaScript library for managing and centralizing application state. It is most commonly used with ' +
+    'Redux': 'Open-source JavaScript library for managing and centralizing an application state. It is most commonly used with ' +
         'libraries such as React or Angular for building user interfaces. Similar to Facebook\'s Flux architecture, it was created by Dan Abramov and Andrew Clark.',
     'HTML5': 'Markup language used for structuring and presenting content on the World Wide Web. It is the fifth and final ' +
         'major HTML version that is a World Wide Web Consortium recommendation. The current specification is known as the HTML Living Standard.',
-    'CSS3': 'Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup ' +
+    'CSS3': 'Cascading Style Sheets is a style sheet language used for describing a presentation of a document written in a markup ' +
         'language such as HTML or XML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.',
     'TypeScript': 'Free and open source programming language developed and maintained by Microsoft. It is a strict' +
-        ' syntactical superset of JavaScript and adds optional static typing to the language. It is designed for the development of ' +
+        ' syntactical superset of JavaScript that adds optional static typing to the language. It is designed for the development of ' +
         'large applications and transpiles to JavaScript.',
-    'SASS': 'Stylesheet language that’s compiled to CSS. It allows you to use variables, nested rules, mixins, functions,' +
-        ' and more, all with a fully CSS-compatible syntax. Sass helps keep large stylesheets well-organized and makes it easy to share design within and across projects.',
+    'SASS': 'Stylesheet language that’s compiled to CSS. It allows you to use variables, nested rules, mixins, functions' +
+        ' and even more, all with a fully CSS-compatible syntax. Sass helps keep large stylesheets well-organized and makes it easy to share a design within and across projects.',
     'RRD': 'Collection of React components, hooks and utilities that make it easy to build multi-page applications with React. ' +
-        'This reference contains the function signatures and return types of the various interfaces in React Router.',
+        'This reference contains function signatures and return types of various interfaces in React Router.',
     'Postman': 'API platform for developers to design, build, test and iterate their APIs. As of April 2022, Postman ' +
         'reports having more than 20 million registered users and 75,000 open APIs, which it says constitutes the world\'s largest public API hub.',
-    'Formik': 'The world\'s most popular open source form library for React and React Native.',
+    'Formik': 'World\'s most popular open-source React and React Native library for forms development.',
     'NextJS': 'Open-source web development framework created by Vercel enabling React-based web applications with server-side rendering' +
         ' and generating static websites.',
-    'Docker': 'A set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.',
-    'TailwindCSS': 'A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.',
+    'Docker': 'Set of platforms as a service product that uses OS-level virtualization to deliver a software into packages called containers.',
+    'TailwindCSS': 'Utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.',
 }
 
 export const skills: Array<SkillType> = [
@@ -120,9 +120,9 @@ export const projects: Array<ProjectType> = [
     {title: 'SIMPLE NOTES', preview: simpleNotesImage, description: projectDescription.simpleNotes,
         codeLink: 'https://github.com/Halera-inc/simple-notes-front',
         pageLink: 'https://simple-notes-app-pearl.vercel.app/',
-        tip: 'to try this application, you need to register with any fake email or use quick authorization through google'
+        tip: 'to try this application, you need to register with any fake email or use a quick authorization through google'
     },
-    {title: 'TODO LIST', preview: todoImage, description: projectDescription.todoList,
+    {title: 'TO DO LIST', preview: todoImage, description: projectDescription.todoList,
         codeLink: 'https://github.com/shevchenkooleg/todo-toolkit.git',
         pageLink: 'https://todolist-shevchenko-ov.vercel.app',
         tip: ''},
