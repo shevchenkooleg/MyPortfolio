@@ -1,9 +1,10 @@
-import React, {forwardRef, useState} from 'react';
+import React, {forwardRef, useEffect, useState} from 'react';
 import HeroiconsOutlineArrowRight from "../../../common/assets/icons/HeroiconsOutlineArrowRight";
 import { motion } from 'framer-motion';
 import {viewportSettingsType} from "../../../common/tools/types";
 import {viewportDelayDeterminate} from "../../../common/tools/viewportDelayDeterminate";
 import s from './Skill.module.css'
+import {unwatchFile} from "fs";
 
 type SkillPropsType = {
     title: string
@@ -26,6 +27,9 @@ const imageAnimation = {
 
 const Skill = forwardRef(({title, icon, description, link, counter}: SkillPropsType, ref:any) => {
 
+    useEffect(()=>{
+        console.log('rerender Skills component')},[])
+
     const viewportSettings: viewportSettingsType = {
         'default': 0.2,
         'less1612': 0.2,
@@ -36,22 +40,23 @@ const Skill = forwardRef(({title, icon, description, link, counter}: SkillPropsT
 
     const [over, setOver] = useState(false)
     const [accessLink, setAccessLink] = useState(false)
+    const [timeoutID, setTimeoutID] = useState<any>(0)
+
+
 
     const onMouseOverHandler = () => {
         setOver(true)
-        setTimeout(()=>{
+        setTimeoutID(setTimeout(()=>{
             setAccessLink(true)
-            // console.log(`link access in element ${counter} set to TRUE`)
-        },1000)
+        },1000))
     }
     const onMouseLeave = () => {
+        clearTimeout(timeoutID)
         setOver(false)
         setAccessLink(false)
-        // console.log(`link access in element ${counter} set to FALSE`)
     }
     const onReadMoreClickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
         e.preventDefault()
-        // console.log(`CLICK and current link access in element ${counter} is ${accessLink}`)
         accessLink && window.open(link)
     }
 
