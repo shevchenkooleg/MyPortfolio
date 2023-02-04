@@ -47,7 +47,8 @@ const Skills = (props: SkillsPropsType) => {
                             key={key} title={el.title}
                             icon={el.icon}
                             description={el.description}
-                            link={el.link}/>})
+                            link={el.link}
+                            counter={key}/>})
                     }
                 </div>
             </div>

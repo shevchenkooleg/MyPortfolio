@@ -10,6 +10,7 @@ type SkillPropsType = {
     icon: React.ReactNode
     description: string
     link: string
+    counter: number
 }
 
 const imageAnimation = {
@@ -23,7 +24,7 @@ const imageAnimation = {
     }
 }
 
-const Skill = forwardRef(({title, icon, description, link}: SkillPropsType, ref:any) => {
+const Skill = forwardRef(({title, icon, description, link, counter}: SkillPropsType, ref:any) => {
 
     const viewportSettings: viewportSettingsType = {
         'default': 0.2,
@@ -40,15 +41,18 @@ const Skill = forwardRef(({title, icon, description, link}: SkillPropsType, ref:
         setOver(true)
         setTimeout(()=>{
             setAccessLink(true)
+            // console.log(`link access in element ${counter} set to TRUE`)
         },1000)
     }
     const onMouseLeave = () => {
         setOver(false)
         setAccessLink(false)
+        // console.log(`link access in element ${counter} set to FALSE`)
     }
     const onReadMoreClickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
         e.preventDefault()
-        window.open(link)
+        // console.log(`CLICK and current link access in element ${counter} is ${accessLink}`)
+        accessLink && window.open(link)
     }
 
     if (document.documentElement.clientWidth > 700){
@@ -74,7 +78,7 @@ const Skill = forwardRef(({title, icon, description, link}: SkillPropsType, ref:
                 <div className={`${s.skillBlockMobile} ${over ? s.mobileActive : ''}`}
                      onMouseOver={onMouseOverHandler} onMouseLeave={onMouseLeave}>
                     <div className={`w-[90px] h-[90px] duration-1000 ${over ? 'opacity-0' : ''}`}>{icon}</div>
-                    <div className={`${s.mobileLink} ${over ? s.linkActive : ''}`} onClick={accessLink ? onReadMoreClickHandler : undefined}>read more</div>
+                    <div className={`${s.mobileLink} ${over ? s.linkActive : ''}`} onClick={onReadMoreClickHandler}>read more</div>
                 </div>
 
             </motion.div>
