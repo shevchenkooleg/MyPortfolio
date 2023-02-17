@@ -39,6 +39,8 @@
     -moz-border-radius: 15px;
     border-radius: 15px;
     overflow: hidden;
+    will-change: transform
+    /*transform: translateZ(0)*/
 }
 
 .feedbackFormContainer {
