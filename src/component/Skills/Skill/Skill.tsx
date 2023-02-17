@@ -1,10 +1,9 @@
-import React, {forwardRef, useEffect, useState} from 'react';
+import React, {forwardRef, useState} from 'react';
 import HeroiconsOutlineArrowRight from "../../../common/assets/icons/HeroiconsOutlineArrowRight";
 import { motion } from 'framer-motion';
 import {viewportSettingsType} from "../../../common/tools/types";
 import {viewportDelayDeterminate} from "../../../common/tools/viewportDelayDeterminate";
 import s from './Skill.module.css'
-import {unwatchFile} from "fs";
 
 type SkillPropsType = {
     title: string
@@ -27,8 +26,6 @@ const imageAnimation = {
 
 const Skill = forwardRef(({title, icon, description, link, counter}: SkillPropsType, ref:any) => {
 
-    useEffect(()=>{
-        console.log('rerender Skills component')},[])
 
     const viewportSettings: viewportSettingsType = {
         'default': 0.2,

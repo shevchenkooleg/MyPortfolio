@@ -76,7 +76,7 @@ function App() {
                     <CatchMeHere catchWays={catchWays} scrollCallback={universalScrollHandler}/>
                 </div>
                 <div id={blockId.contactME} className='min-h-[80%]'>
-                    <ContactMe contacts={contacts}/>
+                    <ContactMe contacts={contacts} scrollCallback={universalScrollHandler}/>
                 </div>
                 <div className='h-auto'>
                     <Footer/>

@@ -1,6 +1,7 @@
 .main {
     position: absolute;
     right: -390px;
+    bottom: 50px;
     transition: 1000ms;
     width: 300px;
     @apply
