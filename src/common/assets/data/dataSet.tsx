@@ -122,10 +122,10 @@ export const projects: Array<ProjectType> = [
         pageLink: 'https://simple-notes-app-pearl.vercel.app/',
         tip: 'to try this application, you need to register with any fake email or use an quick authorization through google'
     },
-    {title: 'TO DO LIST', preview: todoImage, description: projectDescription.todoList,
-        codeLink: 'https://github.com/shevchenkooleg/todo-toolkit.git',
-        pageLink: 'https://todolist-shevchenko-ov.vercel.app',
-        tip: ''},
+    // {title: 'TO DO LIST', preview: todoImage, description: projectDescription.todoList,
+    //     codeLink: 'https://github.com/shevchenkooleg/todo-toolkit.git',
+    //     pageLink: 'https://todolist-shevchenko-ov.vercel.app',
+    //     tip: ''},
     {title: 'MEMO CARDS', preview: cardImage, description: projectDescription.memoCards
         , codeLink: 'https://github.com/shevchenkooleg/friday-cards.git',
         pageLink: 'https://memo-cards-shevchenkooleg.vercel.app',
